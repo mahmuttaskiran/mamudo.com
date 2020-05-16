@@ -20,11 +20,14 @@ class SocialLinks extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      child: Wrap(
-        alignment: WrapAlignment.center,
-        children: <Widget>[
-          for (final s in socialLinks) SocialLinkWidget(social: s),
-        ],
+      child: Container(
+        height: 50,
+        child: ListView(
+          scrollDirection: Axis.horizontal,
+          children: <Widget>[
+            for (final s in socialLinks) SocialLinkWidget(social: s),
+          ],
+        ),
       ),
     );
   }
@@ -37,7 +40,10 @@ class SocialLinkWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return FlatButton.icon(
       onPressed: () {},
-      icon: Icon(social.icon, color: social.color,),
+      icon: Icon(
+        social.icon,
+        color: social.color,
+      ),
       label: Text(social.name),
     );
   }

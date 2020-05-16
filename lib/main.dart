@@ -40,7 +40,7 @@ class _MyAppState extends State<MyApp> {
         accentColor: Colors.lightBlueAccent,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      themeMode: ThemeMode.dark,
+      themeMode: ThemeMode.light,
       showSemanticsDebugger: false,
       debugShowCheckedModeBanner: false,
       localizationsDelegates: const [
