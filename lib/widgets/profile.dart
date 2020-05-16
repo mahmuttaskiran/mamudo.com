@@ -34,6 +34,13 @@ class ProfileWidget extends StatelessWidget {
           textAlign: TextAlign.start,
           alignment: AlignmentDirectional.topStart, //, or Alignment.topLeft
         ),
+        Padding(
+          padding: const EdgeInsets.only(left: 20, right: 20, top: 10),
+          child: Text(
+            "Programlamayı bir düşünce sanatı olarak gören, yürümeyi ve koşmayı çok seven bir insan.",
+            textAlign: TextAlign.center,
+          ),
+        ),
         SizedBox(height: 15),
       ],
     );

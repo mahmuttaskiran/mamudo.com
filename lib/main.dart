@@ -71,8 +71,8 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       body: Center(
         child: SingleChildScrollView(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+          child: Wrap(
+           
             children: <Widget>[
               Card(
                 margin: const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
