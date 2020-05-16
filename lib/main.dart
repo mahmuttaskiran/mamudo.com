@@ -31,6 +31,7 @@ class _MyAppState extends State<MyApp> {
       title: 'Mahmut Taskiran',
       theme: ThemeData(
         primarySwatch: Colors.blueGrey,
+        accentColor: Colors.lightBlueAccent,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       showSemanticsDebugger: false,
@@ -64,17 +65,19 @@ class _HomePageState extends State<HomePage> {
         title: Text("Mahmut Taşkıran"),
         centerTitle: true,
         actions: <Widget>[
-          IconButton(icon: Icon(FontAwesomeIcons.github), onPressed: (){})
+          IconButton(icon: Icon(FontAwesomeIcons.github), onPressed: () {})
         ],
       ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            ProfileWidget(),
-            SocialLinks(),
-            BlogsWidget(),
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              ProfileWidget(),
+              SocialLinks(),
+              BlogsWidget(),
+            ],
+          ),
         ),
       ),
     );
