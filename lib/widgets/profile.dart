@@ -6,7 +6,9 @@ class ProfileWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      mainAxisSize: MainAxisSize.max,
       children: <Widget>[
+        SizedBox(height: 15),
         ClipOval(
           child: Image.asset(
             "assets/images/profile_0.jpeg",
@@ -32,6 +34,7 @@ class ProfileWidget extends StatelessWidget {
           textAlign: TextAlign.start,
           alignment: AlignmentDirectional.topStart, //, or Alignment.topLeft
         ),
+        SizedBox(height: 15),
       ],
     );
   }

@@ -67,35 +67,33 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
+    final width = MediaQuery.of(context).size.width;
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Mahmut Taşkıran"),
-        centerTitle: true,
-        actions: <Widget>[
-          IconButton(icon: Icon(FontAwesomeIcons.github), onPressed: () {})
-        ],
-      ),
       body: Center(
         child: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 15.0),
-                child: Card(
-                  child: Padding(
-                    padding: const EdgeInsets.all(20.0),
-                    child: ProfileWidget(),
-                  ),
+              Card(
+                margin: const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
+                child: Container(
+                  width: width > 500 ? 500 : double.infinity,
+                  child: ProfileWidget(),
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 15.0),
-                child: Card(child: SocialLinks()),
+              Card(
+                margin: const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
+                child: Container(
+                  width: width > 500 ? 500 : double.infinity,
+                  child: SocialLinks(),
+                ),
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 15.0),
-                child: Card(child: BlogsWidget()),
+              Card(
+                margin: const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
+                child: Container(
+                  width: width > 500 ? 500 : double.infinity,
+                  child: BlogsWidget(),
+                ),
               ),
             ],
           ),

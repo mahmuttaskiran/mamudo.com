@@ -80,39 +80,48 @@ class BlogsWidget extends StatelessWidget {
       ]..add(showAll
           ? SizedBox.shrink()
           : Container(
-            color: Colors.grey[300],
-            child: ListTile(
+              color: Theme.of(context).brightness == Brightness.dark
+                  ? Colors.grey[900]
+                  : Colors.grey[300],
+              child: ListTile(
                 title: Text("See all..."),
                 leading: CircleAvatar(
                   backgroundColor: Theme.of(context).primaryColor,
                   child: Icon(FontAwesomeIcons.handPointUp),
                 ),
-                onTap: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (_){
-                    return PostsPage();
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (_) {
+                    return BlogsPage();
                   }));
                 },
               ),
-          )),
+            )),
     );
   }
 }
 
-
-class PostsPage extends StatefulWidget {
+class BlogsPage extends StatefulWidget {
   @override
-  _PostsPageState createState() => _PostsPageState();
+  _BlogsPageState createState() => _BlogsPageState();
 }
 
-class _PostsPageState extends State<PostsPage> {
+class _BlogsPageState extends State<BlogsPage> {
   @override
   Widget build(BuildContext context) {
+    final width = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
         title: Text("Posts"),
         centerTitle: true,
       ),
-      body: BlogsWidget(showAll: true,),
+      body: Center(
+        child: Container(
+          width: width > 500 ? 500 : double.infinity,
+          child: BlogsWidget(
+            showAll: true,
+          ),
+        ),
+      ),
     );
   }
 }
