@@ -34,6 +34,13 @@ class _MyAppState extends State<MyApp> {
         accentColor: Colors.lightBlueAccent,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
+      darkTheme: ThemeData(
+        brightness: Brightness.dark,
+        primarySwatch: Colors.blueGrey,
+        accentColor: Colors.lightBlueAccent,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+      ),
+      themeMode: ThemeMode.dark,
       showSemanticsDebugger: false,
       debugShowCheckedModeBanner: false,
       localizationsDelegates: const [
@@ -73,9 +80,23 @@ class _HomePageState extends State<HomePage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              ProfileWidget(),
-              SocialLinks(),
-              BlogsWidget(),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 15.0),
+                child: Card(
+                  child: Padding(
+                    padding: const EdgeInsets.all(20.0),
+                    child: ProfileWidget(),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 15.0),
+                child: Card(child: SocialLinks()),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 15.0),
+                child: Card(child: BlogsWidget()),
+              ),
             ],
           ),
         ),

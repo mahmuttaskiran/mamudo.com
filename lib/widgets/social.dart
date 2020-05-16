@@ -20,8 +20,8 @@ class SocialLinks extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
+      child: Wrap(
+        alignment: WrapAlignment.center,
         children: <Widget>[
           for (final s in socialLinks) SocialLinkWidget(social: s),
         ],

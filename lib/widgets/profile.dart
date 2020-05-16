@@ -32,21 +32,6 @@ class ProfileWidget extends StatelessWidget {
           textAlign: TextAlign.start,
           alignment: AlignmentDirectional.topStart, //, or Alignment.topLeft
         ),
-        SizedBox(height: 10),
-        Card(
-          child: Row(
-            mainAxisSize: MainAxisSize.min,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              FlatButton(onPressed: () {}, child: Text("See my cv")),
-              VerticalDivider(
-                color: Colors.red,
-                width: 2,
-              ),
-              FlatButton(onPressed: () {}, child: Text("Mail to me"))
-            ],
-          ),
-        )
       ],
     );
   }

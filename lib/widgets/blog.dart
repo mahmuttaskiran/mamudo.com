@@ -79,18 +79,21 @@ class BlogsWidget extends StatelessWidget {
           ),
       ]..add(showAll
           ? SizedBox.shrink()
-          : ListTile(
-              title: Text("See all..."),
-              leading: CircleAvatar(
-                backgroundColor: Theme.of(context).primaryColor,
-                child: Icon(FontAwesomeIcons.handPointUp),
+          : Container(
+            color: Colors.grey[300],
+            child: ListTile(
+                title: Text("See all..."),
+                leading: CircleAvatar(
+                  backgroundColor: Theme.of(context).primaryColor,
+                  child: Icon(FontAwesomeIcons.handPointUp),
+                ),
+                onTap: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (_){
+                    return PostsPage();
+                  }));
+                },
               ),
-              onTap: (){
-                Navigator.push(context, MaterialPageRoute(builder: (_){
-                  return PostsPage();
-                }));
-              },
-            )),
+          )),
     );
   }
 }
