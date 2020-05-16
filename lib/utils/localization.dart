@@ -12,7 +12,7 @@ class AppLocalizations {
   static Future<AppLocalizations> load(Locale locale) async {
     assert(locale != null);
     final str = await rootBundle
-        .loadString("localizations/${locale.languageCode}.json");
+        .loadString("assets/localizations/${locale.languageCode}.json");
     assert(str != null && str.isNotEmpty);
     return AppLocalizations(locale, Map<String, String>.from(jsonDecode(str)));
   }

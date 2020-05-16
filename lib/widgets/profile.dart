@@ -9,7 +9,7 @@ class ProfileWidget extends StatelessWidget {
       children: <Widget>[
         ClipOval(
           child: Image.asset(
-            "images/profile_0.jpeg",
+            "assets/images/profile_0.jpeg",
             width: 100,
             height: 100,
             fit: BoxFit.cover,
