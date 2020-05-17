@@ -1,4 +1,4 @@
-var coreComponents = <String>[
+var tCoreComponents = <String>[
   "Java",
   "Kotlin",
   "Flutter",

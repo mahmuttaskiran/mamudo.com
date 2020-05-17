@@ -12,9 +12,9 @@
 
 .loader {
     border-radius: 50%;
-    border: 5px solid #0091EA;
-    border-right-color: #E50914;
-    border-left-color: #E50914;
+    border: 5px solid white;
+    border-right-color: #0091EA;
+    border-left-color: #0091EA;
     width: 100px;
     height: 100px;
     -webkit-animation: spin 2s linear infinite;

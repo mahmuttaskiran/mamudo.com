@@ -6,7 +6,7 @@ var _professionalLanguage = LanguageSensitiveString.en_tr(
     "Professional", "Profesyonel çalışma yeteneği");
 var _nativeLanguage = LanguageSensitiveString.en_tr("Native", "Ana dil");
 
-var communications = [
+var tCommunications = [
   Communication(
     Locale("en"),
     LanguageSensitiveString.en_tr("English", "İngilizce"),

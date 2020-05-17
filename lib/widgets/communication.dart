@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mamudo_com/constants/communications.dart';
-import 'package:mamudo_com/utils/localization.dart';
+import 'package:mamudo_com/constants/translations.dart';
 import 'package:mamudo_com/widgets/experiences.dart';
 
 class Communications extends StatelessWidget {
@@ -8,9 +8,9 @@ class Communications extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
-        CardTitle(AppLocalizations.of(context).map["communication"]),
+        CardTitle(tCommunicationsTitle.get(context)),
         ...[
-          for (final c in communications)
+          for (final c in tCommunications)
             ListTile(
               dense: true,
               title: Text(c.languageName.get(context)),

@@ -1,7 +1,7 @@
 import 'package:mamudo_com/models/blog.dart';
 import 'package:mamudo_com/models/sensitive_string.dart';
 
-var blogs = [
+var tBlogs = [
   Blog(
     title: LanguageSensitiveString.en_tr(
         "Opcon: Evelution of an application", "Opcon: Bir uygulamanın evrimi"),

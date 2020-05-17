@@ -8,12 +8,12 @@ class CoreComponents extends StatelessWidget {
       height: 50,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
-        itemCount: coreComponents.length,
+        itemCount: tCoreComponents.length,
         itemBuilder: (context, index) {
           return Padding(
             padding: const EdgeInsets.only(left: 8.0),
             child: Chip(
-              label: Text(coreComponents[index]),
+              label: Text(tCoreComponents[index]),
               backgroundColor: index % 2 == 0
                   ? Theme.of(context).primaryColor
                   : Theme.of(context).accentColor,

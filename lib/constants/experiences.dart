@@ -1,7 +1,7 @@
 import 'package:mamudo_com/models/experience.dart';
 import 'package:mamudo_com/models/sensitive_string.dart';
 
-var experiences = [
+var tExperiences = [
   Experience(
     title: LanguageSensitiveString.en_tr(
       "BlueOperation - Mobile App",

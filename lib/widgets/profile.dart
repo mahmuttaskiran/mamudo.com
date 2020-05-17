@@ -1,8 +1,14 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
-import 'package:mamudo_com/utils/localization.dart';
+import 'package:mamudo_com/constants/translations.dart';
+import 'package:mamudo_com/pages/blogs_page.dart';
+import 'package:mamudo_com/pages/cv_page.dart';
 
 class ProfileWidget extends StatelessWidget {
+  final bool showActions;
+
+  ProfileWidget({this.showActions = true});
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -18,16 +24,10 @@ class ProfileWidget extends StatelessWidget {
           ),
         ),
         SizedBox(height: 10),
-        Text(AppLocalizations.of(context).map["person"],
-            style: Theme.of(context).textTheme.headline5),
+        Text(tName.get(context), style: Theme.of(context).textTheme.headline5),
         SizedBox(height: 10),
         FadeAnimatedTextKit(
-          text: [
-            AppLocalizations.of(context).map["profession"],
-            AppLocalizations.of(context).map["profession1"],
-            AppLocalizations.of(context).map["profession2"],
-            AppLocalizations.of(context).map["profession3"],
-          ],
+          text: tProfessions.map((e) => e.get(context)).toList(),
           totalRepeatCount: 10000,
           isRepeatingAnimation: true,
           textStyle: Theme.of(context).textTheme.subtitle2,
@@ -37,11 +37,39 @@ class ProfileWidget extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.only(left: 10, right: 10, top: 10),
           child: Text(
-            AppLocalizations.of(context).map["shortDesc"],
+            tShortDesc.get(context),
             textAlign: TextAlign.center,
           ),
         ),
-        SizedBox(height: 15),
+        if (showActions) SizedBox(height: 10),
+        if (showActions)
+          Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: <Widget>[
+              SizedBox(width: 10),
+              OutlineButton(
+                onPressed: () {
+                  Navigator.push(
+                      context, MaterialPageRoute(builder: (_) => BlogsPage()));
+                },
+                child: Text(
+                  tBlogsTitle.get(context),
+                ),
+              ),
+              SizedBox(width: 10),
+              OutlineButton(
+                onPressed: () {
+                  Navigator.push(
+                      context, MaterialPageRoute(builder: (_) => CVPage()));
+                },
+                child: Text(
+                  tCvBtn.get(context),
+                ),
+              ),
+              SizedBox(width: 10),
+            ],
+          ),
+        SizedBox(height: 5),
       ],
     );
   }

@@ -2,13 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:intl/intl.dart';
 import 'package:mamudo_com/constants/experiences.dart';
+import 'package:mamudo_com/constants/translations.dart';
 import 'package:mamudo_com/models/experience.dart';
-import 'package:mamudo_com/utils/localization.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class CardTitle extends StatelessWidget {
   final String title;
+
   CardTitle(this.title);
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -29,10 +31,9 @@ class Experiences extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
-        if (!showAll)
-          CardTitle(AppLocalizations.of(context).map["experiences"]),
+        if (!showAll) CardTitle(tExperiencesTitle.get(context)),
         ...[
-          for (final e in showAll ? experiences : experiences.sublist(0, 2))
+          for (final e in showAll ? tExperiences : tExperiences.sublist(0, 2))
             ExperienceWidget(
               experience: e,
             )
@@ -43,8 +44,7 @@ class Experiences extends StatelessWidget {
                 ? Colors.grey[900]
                 : Colors.grey[300],
             child: ListTile(
-              title:
-                  Text(AppLocalizations.of(context).map["seeAllExperiences"]),
+              title: Text(tSeeAll.get(context)),
               leading: CircleAvatar(
                 backgroundColor: Theme.of(context).primaryColor,
                 child: Icon(FontAwesomeIcons.handPointer),
@@ -66,7 +66,7 @@ class ExperiencesPage extends StatelessWidget {
     final width = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
-        title: Text(AppLocalizations.of(context).map["experiences"]),
+        title: Text(tExperiencesTitle.get(context)),
       ),
       body: Center(
         child: Container(
@@ -138,8 +138,10 @@ class _ExperienceWidgetState extends State<ExperienceWidget> {
       runSpacing: -10,
       children: <Widget>[
         Chip(
-          label: Text(AppLocalizations.of(context)
-              .map[widget.experience.type.toString().split(".")[1]]),
+          label: Text(
+              widget.experience.type == ExperienceType.professionalExperience
+                  ? tProfessionalExperience.get(context)
+                  : tSelfExperience.get(context)),
           backgroundColor: positionBackgroundColor,
         ),
         if (widget.experience.position != null)
@@ -158,7 +160,7 @@ class _ExperienceWidgetState extends State<ExperienceWidget> {
               launch(widget.experience.secondaryLink);
             },
             child: Chip(
-              label: Text(AppLocalizations.of(context).map["openSource"]),
+              label: Text(tOpenSource.get(context)),
               deleteIcon: Icon(
                 FontAwesomeIcons.code,
                 size: 12,
@@ -169,13 +171,13 @@ class _ExperienceWidgetState extends State<ExperienceWidget> {
           ),
         if (widget.experience.appStoreLink != null)
           Tooltip(
-            message: "AppStore",
+            message: "Go to AppStore",
             child: GestureDetector(
               onTap: () {
                 launch(widget.experience.playStoreLink);
               },
               child: Chip(
-                label: Text("Go to AppStore"),
+                label: Text("AppStore"),
                 deleteIcon: Icon(
                   FontAwesomeIcons.appStoreIos,
                   size: 12,

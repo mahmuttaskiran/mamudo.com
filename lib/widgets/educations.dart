@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:mamudo_com/constants/educations.dart';
+import 'package:mamudo_com/constants/translations.dart';
 import 'package:mamudo_com/models/education.dart';
-import 'package:mamudo_com/utils/localization.dart';
 import 'package:mamudo_com/widgets/experiences.dart';
 
 class Educations extends StatelessWidget {
@@ -10,10 +10,10 @@ class Educations extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
-        CardTitle(AppLocalizations.of(context).map["educations"]),
+        CardTitle(tEducationTitle.get(context)),
         SizedBox(height: 8),
         ...[
-          for (final c in educations)
+          for (final c in tEducations)
             ListTile(
               dense: true,
               title: Text(c.university.get(context)),

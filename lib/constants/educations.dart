@@ -1,7 +1,7 @@
 import 'package:mamudo_com/models/education.dart';
 import 'package:mamudo_com/models/sensitive_string.dart';
 
-var educations = [
+var tEducations = [
   Education(
     start: DateTime(2012),
     end: DateTime(2016),
