@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:mamudo_com/app_state.dart';
 import 'package:mamudo_com/constants/translations.dart';
+import 'package:mamudo_com/pages/blogs_page.dart';
+import 'package:mamudo_com/pages/cv_page.dart';
 import 'package:mamudo_com/pages/home.dart';
 
 void main() {
@@ -37,6 +39,11 @@ class _MyAppState extends State<MyApp> {
         accentColor: Colors.lightBlueAccent,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
+      routes: {
+        "/": (context) => HomePage(),
+        "/cv": (context) => CVPage(),
+        "/blogs": (context) => BlogsPage(),
+      },
       localizationsDelegates: [
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
@@ -47,7 +54,6 @@ class _MyAppState extends State<MyApp> {
       supportedLocales: [Locale("en"), Locale("tr")],
       themeMode: GlobalAppState().themeMode,
       locale: GlobalAppState().appLocale,
-      home: HomePage(),
     );
   }
 }

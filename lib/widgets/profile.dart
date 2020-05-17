@@ -1,8 +1,6 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:mamudo_com/constants/translations.dart';
-import 'package:mamudo_com/pages/blogs_page.dart';
-import 'package:mamudo_com/pages/cv_page.dart';
 
 class ProfileWidget extends StatelessWidget {
   final bool showActions;
@@ -41,35 +39,36 @@ class ProfileWidget extends StatelessWidget {
             textAlign: TextAlign.center,
           ),
         ),
-        if (showActions) SizedBox(height: 10),
+        if (showActions) SizedBox(height: 15),
         if (showActions)
-          Row(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: <Widget>[
-              SizedBox(width: 10),
-              OutlineButton(
-                onPressed: () {
-                  Navigator.push(
-                      context, MaterialPageRoute(builder: (_) => BlogsPage()));
-                },
-                child: Text(
-                  tBlogsTitle.get(context),
+          Container(
+            height: 30,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: <Widget>[
+                SizedBox(width: 10),
+                OutlineButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, "/blogs");
+                  },
+                  child: Text(
+                    tBlogsTitle.get(context),
+                  ),
                 ),
-              ),
-              SizedBox(width: 10),
-              OutlineButton(
-                onPressed: () {
-                  Navigator.push(
-                      context, MaterialPageRoute(builder: (_) => CVPage()));
-                },
-                child: Text(
-                  tCvBtn.get(context),
+                SizedBox(width: 10),
+                OutlineButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, "/cv");
+                  },
+                  child: Text(
+                    tCvBtn.get(context),
+                  ),
                 ),
-              ),
-              SizedBox(width: 10),
-            ],
+                SizedBox(width: 10),
+              ],
+            ),
           ),
-        SizedBox(height: 5),
+        SizedBox(height: 10),
       ],
     );
   }

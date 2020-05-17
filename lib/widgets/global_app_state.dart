@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../app_state.dart';
@@ -13,6 +14,7 @@ class GlobalAppStateWidget extends StatelessWidget {
         width: MediaQuery.of(context).size.width > 500 ? 500 : double.infinity,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.end,
+          mainAxisSize: MainAxisSize.min,
           children: <Widget>[
             FlatButton(
               onPressed: () {
