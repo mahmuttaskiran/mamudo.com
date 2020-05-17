@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mamudo_com/app_state.dart';
 import 'package:mamudo_com/constants/translations.dart';
 import 'package:mamudo_com/widgets/communication.dart';
 import 'package:mamudo_com/widgets/contact.dart';
@@ -6,7 +7,6 @@ import 'package:mamudo_com/widgets/core_components.dart';
 import 'package:mamudo_com/widgets/educations.dart';
 import 'package:mamudo_com/widgets/experiences.dart';
 import 'package:mamudo_com/widgets/fixed_card.dart';
-import 'package:mamudo_com/widgets/global_app_state.dart';
 import 'package:mamudo_com/widgets/profile.dart';
 
 class CVPage extends StatefulWidget {
@@ -21,9 +21,18 @@ class _CVPageState extends State<CVPage> {
       appBar: AppBar(
         title: Text(tCvBtn.get(context)),
         actions: <Widget>[
-          GlobalAppStateWidget(
-            padding: EdgeInsets.only(right: 10),
-          )
+          FlatButton(
+            onPressed: () {
+              GlobalAppState().locale = GlobalAppState().opponentLocale;
+            },
+            child: Text(GlobalAppState().opponentLocaleName),
+          ),
+          FlatButton(
+            onPressed: () {
+              GlobalAppState().themeMode = GlobalAppState().opponentThemeMode;
+            },
+            child: Text(GlobalAppState().opponentThemeModeString),
+          ),
         ],
       ),
       body: Center(

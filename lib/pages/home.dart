@@ -25,7 +25,7 @@ class _HomePageState extends State<HomePage> {
         child: SingleChildScrollView(
           child: Column(
             children: <Widget>[
-              GlobalAppStateWidget(),
+              FixedContainer(child: GlobalAppStateWidget()),
               FixedCard(child: ProfileWidget()),
               FixedCard(child: SocialLinks()),
             ],
