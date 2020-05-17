@@ -3,21 +3,15 @@ import 'package:intl/intl.dart';
 import 'package:mamudo_com/constants/educations.dart';
 import 'package:mamudo_com/models/education.dart';
 import 'package:mamudo_com/utils/localization.dart';
+import 'package:mamudo_com/widgets/experiences.dart';
 
 class Educations extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
-        Container(
-          color: Colors.grey[700],
-          child: ListTile(
-            title: Center(
-              child: Text(AppLocalizations.of(context).map["educations"]),
-            ),
-            dense: false,
-          ),
-        ),
+        CardTitle(AppLocalizations.of(context).map["educations"]),
+        SizedBox(height: 8),
         ...[
           for (final c in educations)
             ListTile(
@@ -36,6 +30,7 @@ class Educations extends StatelessWidget {
               ),
             ),
         ],
+        SizedBox(height: 8),
       ],
     );
   }

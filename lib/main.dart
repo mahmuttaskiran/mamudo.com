@@ -14,6 +14,68 @@ void main() {
   runApp(MyApp());
 }
 
+class _GlobalAppState {
+  static final _GlobalAppState instance = _GlobalAppState._();
+
+  _GlobalAppState._();
+
+  factory _GlobalAppState() => instance;
+  Locale _appLocale = Locale("en");
+  ThemeMode _themeMode = ThemeMode.dark;
+
+  Function appStateListener;
+
+  Locale get appLocale => _appLocale;
+
+  ThemeMode get themeMode => _themeMode;
+
+  set locale(Locale v) {
+    _appLocale = v;
+    if (appStateListener != null) {
+      appStateListener();
+    }
+  }
+
+  set themeMode(ThemeMode mode) {
+    _themeMode = mode;
+    if (appStateListener != null) {
+      appStateListener();
+    }
+  }
+
+  String get opponentLocaleName {
+    if (appLocale.languageCode == "tr") {
+      return "English";
+    } else {
+      return "Turkish";
+    }
+  }
+
+  Locale get opponentLocale {
+    if (appLocale.languageCode == "tr") {
+      return Locale("en");
+    } else {
+      return Locale("tr");
+    }
+  }
+
+  ThemeMode get opponentThemeMode {
+    if (_themeMode == ThemeMode.dark) {
+      return ThemeMode.light;
+    } else {
+      return ThemeMode.dark;
+    }
+  }
+
+  String get opponentThemeModeString {
+    if (_themeMode == ThemeMode.dark) {
+      return "Light";
+    } else {
+      return "Dark";
+    }
+  }
+}
+
 class MyApp extends StatefulWidget {
   @override
   _MyAppState createState() => _MyAppState();
@@ -21,6 +83,12 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   Locale locale;
+
+  @override
+  void initState() {
+    super.initState();
+    _GlobalAppState().appStateListener = () => setState(() {});
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +105,7 @@ class _MyAppState extends State<MyApp> {
         accentColor: Colors.lightBlueAccent,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      themeMode: ThemeMode.dark,
+      themeMode: _GlobalAppState().themeMode,
       showSemanticsDebugger: false,
       debugShowCheckedModeBanner: false,
       localizationsDelegates: const [
@@ -46,7 +114,7 @@ class _MyAppState extends State<MyApp> {
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
       ],
-      locale: locale,
+      locale: _GlobalAppState().appLocale,
       supportedLocales: [Locale("en"), Locale("tr")],
       home: HomePage(),
     );
@@ -74,6 +142,30 @@ class _HomePageState extends State<HomePage> {
         child: SingleChildScrollView(
           child: Column(
             children: <Widget>[
+              Container(
+                width: MediaQuery.of(context).size.width > 500
+                    ? 500
+                    : double.infinity,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: <Widget>[
+                    FlatButton(
+                      onPressed: () {
+                        _GlobalAppState().locale =
+                            _GlobalAppState().opponentLocale;
+                      },
+                      child: Text(_GlobalAppState().opponentLocaleName),
+                    ),
+                    FlatButton(
+                      onPressed: () {
+                        _GlobalAppState().themeMode =
+                            _GlobalAppState().opponentThemeMode;
+                      },
+                      child: Text(_GlobalAppState().opponentThemeModeString),
+                    )
+                  ],
+                ),
+              ),
               _Card(child: ProfileWidget()),
               _Card(child: SocialLinks()),
               _Card(child: BlogsWidget()),

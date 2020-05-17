@@ -6,6 +6,20 @@ import 'package:mamudo_com/models/experience.dart';
 import 'package:mamudo_com/utils/localization.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+class CardTitle extends StatelessWidget {
+  final String title;
+  CardTitle(this.title);
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 25,
+      width: double.infinity,
+      child: Center(child: Text(title)),
+      color: Theme.of(context).accentColor,
+    );
+  }
+}
+
 class Experiences extends StatelessWidget {
   final bool showAll;
 
@@ -16,15 +30,7 @@ class Experiences extends StatelessWidget {
     return Column(
       children: <Widget>[
         if (!showAll)
-          Container(
-            color: Colors.grey[700],
-            child: ListTile(
-              title: Center(
-                child: Text(AppLocalizations.of(context).map["experiences"]),
-              ),
-              dense: false,
-            ),
-          ),
+          CardTitle(AppLocalizations.of(context).map["experiences"]),
         ...[
           for (final e in showAll ? experiences : experiences.sublist(0, 2))
             ExperienceWidget(
