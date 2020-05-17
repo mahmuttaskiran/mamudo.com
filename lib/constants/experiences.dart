@@ -8,7 +8,7 @@ var tExperiences = [
       "Argeloji",
     ),
     description: LanguageSensitiveString.en_tr(
-      "Developing a mobile application (BlueOpeeration) for Argeloji. BlueOperation offers RTLS solutions that can actively monitor the location of assets to optimize searching time in a wide range of area facilities such as Airports.",
+      "Developing BlueOperation's mobile application for Argeloji. BlueOperation offers RTLS solutions that can actively monitor the location of assets to optimize searching time in a wide range of area facilities such as Airports.",
       "Argeloji'nin bünyesindeki BlueOperation'ın mobil uygulamasını geliştiriyorum. BlueOperation, RTLS çözümleri sunan, havaalanları gibi geniş alan tesislerinde varlıkların arama sürecini optimize eden bir altyapı.",
     ),
     position: LanguageSensitiveString.en_tr(
