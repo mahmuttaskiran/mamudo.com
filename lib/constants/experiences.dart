@@ -1,26 +1,47 @@
-import 'package:mamudo_com/widgets/experiences.dart';
+import 'package:mamudo_com/models/experience.dart';
+import 'package:mamudo_com/models/sensitive_string.dart';
 
 var experiences = [
   Experience(
-    title: "BlueOperation - Mobile App",
-    description:
-        "BlueOperation RTLS solution can actively monitor the location of assets to optimize searching time in wide range area facilities such as Airports.",
-    position: "Mobile Application Developer, Project Leader",
-    type: ExperienceType.ProfessionalExperience,
+    title: LanguageSensitiveString.en_tr(
+      "BlueOperation - Mobile App",
+      "BlueOperation - Mobil uygulama",
+    ),
+    description: LanguageSensitiveString.en_tr(
+      "BlueOperation RTLS solution can actively monitor the location of assets to optimize searching time in wide range area facilities such as Airports.",
+      "BlueOperation RTLS çözümleri sunan, havaalanları gibi geniş alan tesislerinde varlıkların arama sürecini optimize eden bir girişim.",
+    ),
+    position: LanguageSensitiveString.en_tr(
+      "Mobile Application Developer, Project Leader",
+      "Mobil Uygulama Geliştiricisi, Proje Lideri",
+    ),
+    type: ExperienceType.professionalExperience,
     assetImage: "assets/images/blueoperation.webp",
     start: DateTime(2019, 6),
     end: null,
     playStoreLink:
         "https://play.google.com/store/apps/details?id=com.blueoperation_mobile",
     secondaryLink: "https://blueoperation.io",
-    location: "Istanbul / Turkey",
-    company: "Argeloji",
+    location: LanguageSensitiveString.en_tr(
+      "Istanbul / Turkey",
+      "Istanbul",
+    ),
+    company: LanguageSensitiveString.en_tr("Argeloji", ""),
   ),
   Experience(
-    title: "Polyingo - Mobile App",
-    description: "Language learning application written in Flutter.",
-    position: "Mobile Application Developer",
-    type: ExperienceType.SelfExperience,
+    title: LanguageSensitiveString.en_tr(
+      "Polyingo - Mobile App",
+      "Polyingo - Mobil uygulama",
+    ),
+    description: LanguageSensitiveString.en_tr(
+      "An application that allows users to learn English by watching videos about words.",
+      "Kullanıcılara kelimeler hakkında çekilmiş videoları izleterek İngilizce öğrenmelerini sağlayan bir uygulama.",
+    ),
+    position: LanguageSensitiveString.en_tr(
+      "Mobile Application Developer",
+      "Mobil Uygulama Geliştiricisi",
+    ),
+    type: ExperienceType.selfExperience,
     assetImage: "assets/images/polyingo.png",
     start: DateTime(2019, 1),
     end: null,
@@ -30,44 +51,79 @@ var experiences = [
     secondaryLink: "https://www.polyingo.com",
   ),
   Experience(
-    title: "Polyin-Go Backend Service",
-    description:
-        "Backend service for Polyingo mobile application written in Go.",
-    position: "Backend Developer",
-    type: ExperienceType.SelfExperience,
+    title: LanguageSensitiveString.en_tr(
+      "Polyin-Go Backend Service",
+      "Polyin-Go Backend Service",
+    ),
+    description: LanguageSensitiveString.en_tr(
+      "Backend service for Polyingo mobile application written in Go.",
+      "Go programlama dili ile yazılmış bir arka plan servisi.",
+    ),
+    position: LanguageSensitiveString.en_tr(
+      "Backend Developer",
+      "Backend Developer",
+    ),
+    type: ExperienceType.selfExperience,
     assetImage: "assets/images/polyingo.png",
     start: DateTime(2019, 1),
     end: null,
     secondaryLink: "https://www.polyingo.com",
   ),
   Experience(
-    title: "Çekirdek Bilgisayar",
-    position: "Mobile Applicatin Developer",
-    description:
-        "Used Kotlin and Android Framework to develop social networking applications. Worked with React-Native to re-write some applications written in PhoneGAP.",
-    location: "Istanbul, Turkey",
+    title: LanguageSensitiveString.en_tr(
+      "Cekirdek Bilgisayar",
+      "Çekirdek Bilgisayar",
+    ),
+    position: LanguageSensitiveString.en_tr(
+      "Mobile Applicatin Developer",
+      "Mobil Uygulama Geliştiricisi",
+    ),
+    description: LanguageSensitiveString.en_tr(
+      "Used Kotlin and Android Framework to develop social networking applications. Worked with React-Native to re-write some applications written in PhoneGAP.",
+      "Kotlin ve React-Native ile ayrı ayrı projeler geliştirerek yeni ve güncel teknolojileri öğrendiğim ilk iş deneyimim.",
+    ),
+    location: LanguageSensitiveString.en_tr(
+      "Istanbul, Turkey",
+      "İstanbul",
+    ),
     start: DateTime(2017),
     end: DateTime(2018),
-    type: ExperienceType.ProfessionalExperience,
+    type: ExperienceType.professionalExperience,
     secondaryLink: "http://cekirdekbilgisayar.com.tr/",
   ),
   Experience(
-    title: "Opcon - Mobile Application",
-    description:
-        "Open source Android application written in Java. It is my first application that I developed for Android individually.",
-    position: "Fullstack Developer",
-    type: ExperienceType.SelfExperience,
+    title: LanguageSensitiveString.en_tr(
+      "Opcon - Mobile Application",
+      "Opcon - Mobil uygulama",
+    ),
+    description: LanguageSensitiveString.en_tr(
+      "A mobile application that allows users to send smart rules to each other to manage each other's phones.",
+      "Kullanıcıların birbirlerine akıllı kurallar göndererek birbirlerinin telefonlarını yönetmelerini sağlayan bir mobil uygulama.",
+    ),
+    position: LanguageSensitiveString.en_tr(
+      "Fullstack Developer",
+      "Fullstack Developer",
+    ),
+    type: ExperienceType.selfExperience,
     start: DateTime(2015, 4),
     end: DateTime(2016, 1),
     secondaryLink: "https://github.com/mahmuttaskiran/Opcon",
     isOpenSource: true,
   ),
   Experience(
-    title: "Makefake - Javascript Library",
-    description:
-        "Make easier to create data for test, design and other development process needs data to continue fast.",
-    position: "Developer",
-    type: ExperienceType.SelfExperience,
+    title: LanguageSensitiveString.en_tr(
+      "Makefake - Javascript Library",
+      "",
+    ),
+    description: LanguageSensitiveString.en_tr(
+      "Make easier to create data for test, design and other development process needs data to continue fast.",
+      "Test ve tasarım ortamları için ihtiyaç duyulabilecek veri şablonlarının kolaylıkla üretilebildiği bir JavaScript kütüphanesi.",
+    ),
+    position: LanguageSensitiveString.en_tr(
+      "Developer",
+      "",
+    ),
+    type: ExperienceType.selfExperience,
     start: DateTime(2015, 4),
     end: DateTime(2016, 1),
     secondaryLink: "https://github.com/mahmuttaskiran/Opcon",

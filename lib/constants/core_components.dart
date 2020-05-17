@@ -1,0 +1,16 @@
+var coreComponents = <String>[
+  "Java",
+  "Kotlin",
+  "Flutter",
+  "Dart",
+  "React-Native",
+  "Go",
+  "Git",
+  "Rust",
+  "JavaScript",
+  "Html",
+  "Css",
+  "Gitlab",
+  "Github",
+  "Bitbucket",
+];

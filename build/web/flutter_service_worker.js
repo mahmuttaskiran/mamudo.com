@@ -3,7 +3,7 @@ const CACHE_NAME = 'flutter-app-cache';
 const RESOURCES = {
   "index.html": "1806df9d5c269e8f63795ae2fc7c3345",
 "/": "1806df9d5c269e8f63795ae2fc7c3345",
-"main.dart.js": "5700f84f5d9ad1c35d35e8313fd4f4e4",
+"main.dart.js": "acd3b09f82cd09a90c1c9aa492271855",
 "favicon.png": "5dcef449791fa27946b3d35ad8803796",
 "icons/Icon-192.png": "ac9a721a12bbc803b44f645561ecb1e1",
 "icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
@@ -19,8 +19,8 @@ const RESOURCES = {
 "assets/assets/images/blueoperation.webp": "f765522733e9fcc8f57da8e1afdbfd4b",
 "assets/assets/images/profile_0.jpeg": "bc9ce790d7d76de0eb609434156d1978",
 "assets/assets/images/polyingo.png": "779aaf4f5e9101d10a38d146a379e16a",
-"assets/assets/localizations/tr.json": "31b3648d455755f779c9b60f573609a0",
-"assets/assets/localizations/en.json": "38dcd90029a5de9c8070ff279f409e6b"
+"assets/assets/localizations/tr.json": "6abb7c8aa5592caf5c2b12147592ce26",
+"assets/assets/localizations/en.json": "d957745e9b8fd4ef41b30c33964e4b8c"
 };
 
 self.addEventListener('activate', function (event) {

@@ -2,46 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:intl/intl.dart';
 import 'package:mamudo_com/constants/experiences.dart';
+import 'package:mamudo_com/models/experience.dart';
 import 'package:mamudo_com/utils/localization.dart';
 import 'package:url_launcher/url_launcher.dart';
-
-enum ExperienceType {
-  SelfExperience,
-  ProfessionalExperience,
-}
-
-class Experience {
-  String title;
-  String description;
-  String assetImage;
-  DateTime start;
-  DateTime end;
-  String playStoreLink;
-  String appStoreLink;
-  String secondaryLink;
-  ExperienceType type;
-  String position;
-  String location;
-  String company;
-
-  bool isOpenSource;
-
-  Experience({
-    this.title,
-    this.description,
-    this.assetImage,
-    this.start,
-    this.end,
-    this.playStoreLink,
-    this.secondaryLink,
-    this.type,
-    this.position,
-    this.location,
-    this.company,
-    this.appStoreLink,
-    this.isOpenSource = false,
-  });
-}
 
 class Experiences extends StatelessWidget {
   final bool showAll;
@@ -54,10 +17,10 @@ class Experiences extends StatelessWidget {
       children: <Widget>[
         if (!showAll)
           Container(
-            color: Colors.grey,
+            color: Colors.grey[700],
             child: ListTile(
               title: Center(
-                child: Text("Experiences"),
+                child: Text(AppLocalizations.of(context).map["experiences"]),
               ),
               dense: false,
             ),
@@ -74,7 +37,8 @@ class Experiences extends StatelessWidget {
                 ? Colors.grey[900]
                 : Colors.grey[300],
             child: ListTile(
-              title: Text(AppLocalizations.of(context).map["seeAllPosts"]),
+              title:
+                  Text(AppLocalizations.of(context).map["seeAllExperiences"]),
               leading: CircleAvatar(
                 backgroundColor: Theme.of(context).primaryColor,
                 child: Icon(FontAwesomeIcons.handPointer),
@@ -95,12 +59,16 @@ class ExperiencesPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: Text(AppLocalizations.of(context).map["experiences"]),
+      ),
       body: Center(
         child: Container(
           width: width > 500 ? 500 : double.infinity,
-          child: Experiences(
-            showAll: true,
+          child: SingleChildScrollView(
+            child: Experiences(
+              showAll: true,
+            ),
           ),
         ),
       ),
@@ -133,8 +101,8 @@ class _ExperienceWidgetState extends State<ExperienceWidget> {
             ),
             backgroundColor: Theme.of(context).accentColor,
           ),
-          title: Text(widget.experience.title),
-          subtitle: Text(widget.experience.description),
+          title: Text(widget.experience.title.get(context)),
+          subtitle: Text(widget.experience.description.get(context)),
           trailing: trailing,
         ),
         Align(
@@ -164,17 +132,18 @@ class _ExperienceWidgetState extends State<ExperienceWidget> {
       runSpacing: -10,
       children: <Widget>[
         Chip(
-          label: Text(widget.experience.type.toString().split(".")[1]),
+          label: Text(AppLocalizations.of(context)
+              .map[widget.experience.type.toString().split(".")[1]]),
           backgroundColor: positionBackgroundColor,
         ),
         if (widget.experience.position != null)
           Chip(
-            label: Text(widget.experience.position),
+            label: Text(widget.experience.position.get(context)),
             backgroundColor: positionBackgroundColor,
           ),
         if (widget.experience.location != null)
           Chip(
-            label: Text(widget.experience.location),
+            label: Text(widget.experience.location.get(context)),
             backgroundColor: positionBackgroundColor,
           ),
         if (widget.experience.isOpenSource)
@@ -183,7 +152,7 @@ class _ExperienceWidgetState extends State<ExperienceWidget> {
               launch(widget.experience.secondaryLink);
             },
             child: Chip(
-              label: Text("Open source"),
+              label: Text(AppLocalizations.of(context).map["openSource"]),
               deleteIcon: Icon(
                 FontAwesomeIcons.code,
                 size: 12,
@@ -193,33 +162,39 @@ class _ExperienceWidgetState extends State<ExperienceWidget> {
             ),
           ),
         if (widget.experience.appStoreLink != null)
-          GestureDetector(
-            onTap: () {
-              launch(widget.experience.playStoreLink);
-            },
-            child: Chip(
-              label: Text("AppStore"),
-              deleteIcon: Icon(
-                FontAwesomeIcons.appStoreIos,
-                size: 12,
+          Tooltip(
+            message: "AppStore",
+            child: GestureDetector(
+              onTap: () {
+                launch(widget.experience.playStoreLink);
+              },
+              child: Chip(
+                label: Text("Go to AppStore"),
+                deleteIcon: Icon(
+                  FontAwesomeIcons.appStoreIos,
+                  size: 12,
+                ),
+                onDeleted: () {},
+                backgroundColor: positionBackgroundColor,
               ),
-              onDeleted: () {},
-              backgroundColor: positionBackgroundColor,
             ),
           ),
         if (widget.experience.playStoreLink != null)
-          GestureDetector(
-            onTap: () {
-              launch(widget.experience.playStoreLink);
-            },
-            child: Chip(
-              label: Text("PlayStore"),
-              deleteIcon: Icon(
-                FontAwesomeIcons.googlePlay,
-                size: 12,
+          Tooltip(
+            message: "Go to PlayStore",
+            child: GestureDetector(
+              onTap: () {
+                launch(widget.experience.playStoreLink);
+              },
+              child: Chip(
+                label: Text("PlayStore"),
+                deleteIcon: Icon(
+                  FontAwesomeIcons.googlePlay,
+                  size: 12,
+                ),
+                onDeleted: () {},
+                backgroundColor: positionBackgroundColor,
               ),
-              onDeleted: () {},
-              backgroundColor: positionBackgroundColor,
             ),
           ),
         SizedBox(width: 200)
@@ -231,32 +206,38 @@ class _ExperienceWidgetState extends State<ExperienceWidget> {
     final s = DateFormat.yM().format(widget.experience.start);
     String e;
     if (widget.experience.end != null) {
-      e = DateFormat.yM().format(widget.experience.start);
+      e = DateFormat.yM().format(widget.experience.end);
     }
     return e == null ? s : s + "\n" + e;
   }
 
   Widget get trailing {
     if (widget.experience.isOpenSource) {
-      return GestureDetector(
-        onTap: () {
-          launch(widget.experience.secondaryLink);
-        },
-        child: CircleAvatar(
-          child: Icon(FontAwesomeIcons.github),
+      return Tooltip(
+        message: widget.experience.secondaryLink,
+        child: GestureDetector(
+          onTap: () {
+            launch(widget.experience.secondaryLink);
+          },
+          child: CircleAvatar(
+            child: Icon(FontAwesomeIcons.github),
+          ),
         ),
       );
     } else if (widget.experience.assetImage != null) {
-      return GestureDetector(
-        onTap: () {
-          launch(widget.experience.secondaryLink);
-        },
-        child: ClipOval(
-          child: Image.asset(
-            widget.experience.assetImage,
-            width: 40,
-            height: 40,
-            fit: BoxFit.contain,
+      return Tooltip(
+        message: widget.experience.secondaryLink,
+        child: GestureDetector(
+          onTap: () {
+            launch(widget.experience.secondaryLink);
+          },
+          child: ClipOval(
+            child: Image.asset(
+              widget.experience.assetImage,
+              width: 40,
+              height: 40,
+              fit: BoxFit.contain,
+            ),
           ),
         ),
       );

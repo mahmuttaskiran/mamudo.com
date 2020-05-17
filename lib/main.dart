@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:mamudo_com/utils/localization.dart';
 import 'package:mamudo_com/widgets/blog.dart';
+import 'package:mamudo_com/widgets/communication.dart';
+import 'package:mamudo_com/widgets/contact.dart';
+import 'package:mamudo_com/widgets/core_components.dart';
+import 'package:mamudo_com/widgets/educations.dart';
 import 'package:mamudo_com/widgets/experiences.dart';
 import 'package:mamudo_com/widgets/profile.dart';
 import 'package:mamudo_com/widgets/social.dart';
@@ -65,43 +69,40 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    final width = MediaQuery.of(context).size.width;
     return Scaffold(
       body: Center(
         child: SingleChildScrollView(
-          child: Wrap(
+          child: Column(
             children: <Widget>[
-              Card(
-                margin: const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
-                child: Container(
-                  width: width > 500 ? 500 : double.infinity,
-                  child: ProfileWidget(),
-                ),
-              ),
-              Card(
-                margin: const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
-                child: Container(
-                  width: width > 500 ? 500 : double.infinity,
-                  child: SocialLinks(),
-                ),
-              ),
-              Card(
-                margin: const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
-                child: Container(
-                  width: width > 500 ? 500 : double.infinity,
-                  child: BlogsWidget(),
-                ),
-              ),
-              Card(
-                margin: const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
-                child: Container(
-                  width: width > 500 ? 500 : double.infinity,
-                  child: Experiences(),
-                ),
-              ),
+              _Card(child: ProfileWidget()),
+              _Card(child: SocialLinks()),
+              _Card(child: BlogsWidget()),
+              _Card(child: CoreComponents()),
+              _Card(child: Experiences()),
+              _Card(child: Communications()),
+              _Card(child: Educations()),
+              _Card(child: Contact()),
             ],
           ),
         ),
+      ),
+    );
+  }
+}
+
+class _Card extends StatelessWidget {
+  final Widget child;
+
+  _Card({this.child});
+
+  @override
+  Widget build(BuildContext context) {
+    final width = MediaQuery.of(context).size.width;
+    return Card(
+      margin: const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
+      child: Container(
+        width: width > 500 ? 500 : double.infinity,
+        child: child,
       ),
     );
   }

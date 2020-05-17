@@ -5,5 +5,13 @@
   "profession2": "Koşan adam",
   "profession3": "Yazan adam",
   "seeAllPosts": "Hepsini gör...",
-  "shortDesc": "15'li yaşlarımdan beri programlamaya aşığım. Öğrenmeyi, yürümeyi, koşmayı ve de yazmayı seviyorum."
+  "blogPageTitle": "Blog yazılarım",
+  "shortDesc": "15'li yaşlarımdan beri programlamaya aşığım. Öğrenmeyi, yürümeyi, koşmayı ve de yazmayı seviyorum.",
+  "experiences": "Deneyimler",
+  "seeAllExperiences": "Hepsini gör...",
+  "openSource": "Açık kaynak",
+  "professionalExperience": "Profesyonel Çalışma Deneyimi",
+  "selfExperience": "Kendi projem",
+  "communication": "Communication",
+  "educations": "Eğitim"
 }
