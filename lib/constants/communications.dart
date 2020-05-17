@@ -3,7 +3,7 @@ import 'package:mamudo_com/models/communication.dart';
 import 'package:mamudo_com/models/sensitive_string.dart';
 
 var _professionalLanguage = LanguageSensitiveString.en_tr(
-    "Professional", "Profesyonel çalışma yeteneği");
+    "Professional working proficiency", "Profesyonel çalışma yeteneği");
 var _nativeLanguage = LanguageSensitiveString.en_tr("Native", "Ana dil");
 
 var tCommunications = [
