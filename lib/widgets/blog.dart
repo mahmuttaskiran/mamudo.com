@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:mamudo_com/utils/localization.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Blog {
@@ -48,55 +49,53 @@ var blogs = [
 
 class BlogsWidget extends StatelessWidget {
   final bool showAll;
+
   BlogsWidget({this.showAll = false});
+
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: <Widget>[
-        for (final f in showAll ? blogs : blogs.sublist(0, 2))
-          Column(
-            mainAxisSize: MainAxisSize.min,
-            children: <Widget>[
-              ListTile(
-                contentPadding: const EdgeInsets.all(15),
-                title: Text(f.title),
-                onTap: () {
-                  launch(f.link);
-                },
-                subtitle: Text(
-                  f.content,
-                  maxLines: 2,
-                ),
-                leading: CircleAvatar(
-                  backgroundColor: Theme.of(context).accentColor,
-                  child: Icon(FontAwesomeIcons.mediumM),
-                ),
+        children: <Widget>[
+      for (final f in showAll ? blogs : blogs.sublist(0, 2))
+        Column(
+          mainAxisSize: MainAxisSize.min,
+          children: <Widget>[
+            ListTile(
+              contentPadding: const EdgeInsets.all(15),
+              title: Text(f.title),
+              onTap: () {
+                launch(f.link);
+              },
+              subtitle: Text(
+                f.content,
+                maxLines: 2,
               ),
-              Divider(
-                height: 1,
+              leading: CircleAvatar(
+                backgroundColor: Theme.of(context).accentColor,
+                child: Icon(FontAwesomeIcons.mediumM),
               ),
-            ],
-          ),
-      ]..add(showAll
-          ? SizedBox.shrink()
-          : Container(
-              color: Theme.of(context).brightness == Brightness.dark
-                  ? Colors.grey[900]
-                  : Colors.grey[300],
-              child: ListTile(
-                title: Text("See all..."),
-                leading: CircleAvatar(
-                  backgroundColor: Theme.of(context).primaryColor,
-                  child: Icon(FontAwesomeIcons.handPointUp),
+            ),
+          ],
+        ),
+    ]..add(showAll
+            ? SizedBox.shrink()
+            : Container(
+                color: Theme.of(context).brightness == Brightness.dark
+                    ? Colors.grey[900]
+                    : Colors.grey[300],
+                child: ListTile(
+                  title: Text(AppLocalizations.of(context).map["seeAllPosts"]),
+                  leading: CircleAvatar(
+                    backgroundColor: Theme.of(context).primaryColor,
+                    child: Icon(FontAwesomeIcons.handPointer),
+                  ),
+                  onTap: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (_) {
+                      return BlogsPage();
+                    }));
+                  },
                 ),
-                onTap: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (_) {
-                    return BlogsPage();
-                  }));
-                },
-              ),
-            )),
-    );
+              )));
   }
 }
 
@@ -111,7 +110,7 @@ class _BlogsPageState extends State<BlogsPage> {
     final width = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
-        title: Text("Posts"),
+        title: Text(AppLocalizations.of(context).map["blogPageTitle"]),
         centerTitle: true,
       ),
       body: Center(

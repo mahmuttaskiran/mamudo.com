@@ -23,10 +23,10 @@ class ProfileWidget extends StatelessWidget {
         SizedBox(height: 10),
         FadeAnimatedTextKit(
           text: [
-            "Mobile Application Developer",
-            "Runner",
-            "Thinker",
-            "Blogger",
+            AppLocalizations.of(context).map["profession"],
+            AppLocalizations.of(context).map["profession1"],
+            AppLocalizations.of(context).map["profession2"],
+            AppLocalizations.of(context).map["profession3"],
           ],
           totalRepeatCount: 10000,
           isRepeatingAnimation: true,
@@ -35,9 +35,9 @@ class ProfileWidget extends StatelessWidget {
           alignment: AlignmentDirectional.topStart, //, or Alignment.topLeft
         ),
         Padding(
-          padding: const EdgeInsets.only(left: 20, right: 20, top: 10),
+          padding: const EdgeInsets.only(left: 10, right: 10, top: 10),
           child: Text(
-            "Programlamayı bir düşünce sanatı olarak gören, yürümeyi ve koşmayı çok seven bir insan.",
+            AppLocalizations.of(context).map["shortDesc"],
             textAlign: TextAlign.center,
           ),
         ),

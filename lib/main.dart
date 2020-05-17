@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:mamudo_com/utils/localization.dart';
 import 'package:mamudo_com/widgets/blog.dart';
+import 'package:mamudo_com/widgets/experiences.dart';
 import 'package:mamudo_com/widgets/profile.dart';
 import 'package:mamudo_com/widgets/social.dart';
 
@@ -17,13 +17,6 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   Locale locale;
-
-  @override
-  void initState() {
-    super.initState();
-    final localeSplit = ("en_US").split("_");
-    locale = Locale(localeSplit[0], localeSplit[1]);
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -66,13 +59,17 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
     return Scaffold(
       body: Center(
         child: SingleChildScrollView(
           child: Wrap(
-           
             children: <Widget>[
               Card(
                 margin: const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
@@ -93,6 +90,13 @@ class _HomePageState extends State<HomePage> {
                 child: Container(
                   width: width > 500 ? 500 : double.infinity,
                   child: BlogsWidget(),
+                ),
+              ),
+              Card(
+                margin: const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
+                child: Container(
+                  width: width > 500 ? 500 : double.infinity,
+                  child: Experiences(),
                 ),
               ),
             ],
