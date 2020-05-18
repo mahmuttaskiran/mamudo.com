@@ -4,16 +4,16 @@ import 'package:mamudo_com/models/sensitive_string.dart';
 var tExperiences = [
   Experience(
     title: LanguageSensitiveString.en_tr(
-      "BlueOperation - Mobile App",
-      "BlueOperation - Mobil uygulama",
+      "Argeloji",
+      "Argeloji",
     ),
     description: LanguageSensitiveString.en_tr(
-      "BlueOperation RTLS solution can actively monitor the location of assets to optimize searching time in wide range area facilities such as Airports.",
-      "BlueOperation RTLS çözümleri sunan, havaalanları gibi geniş alan tesislerinde varlıkların arama sürecini optimize eden bir girişim.",
+      "Developing BlueOperation's mobile application for Argeloji. BlueOperation offers RTLS solutions that can actively monitor the location of assets to optimize searching time in a wide range of area facilities such as Airports.",
+      "Argeloji'nin bünyesindeki BlueOperation'ın mobil uygulamasını geliştiriyorum. BlueOperation, RTLS çözümleri sunan, havaalanları gibi geniş alan tesislerinde varlıkların arama sürecini optimize eden bir altyapı.",
     ),
     position: LanguageSensitiveString.en_tr(
-      "Mobile Application Developer, Project Leader",
-      "Mobil Uygulama Geliştiricisi, Proje Lideri",
+      "Mobile Application Developer",
+      "Mobil Uygulama Geliştiricisi",
     ),
     type: ExperienceType.professionalExperience,
     assetImage: "assets/images/blueoperation.webp",
@@ -21,7 +21,7 @@ var tExperiences = [
     end: null,
     playStoreLink:
         "https://play.google.com/store/apps/details?id=com.blueoperation_mobile",
-    secondaryLink: "https://blueoperation.io",
+    secondaryLink: "https://www.argeloji.com",
     location: LanguageSensitiveString.en_tr(
       "Istanbul / Turkey",
       "Istanbul",
@@ -57,7 +57,7 @@ var tExperiences = [
     ),
     description: LanguageSensitiveString.en_tr(
       "Backend service for Polyingo mobile application written in Go.",
-      "Go programlama dili ile yazılmış bir arka plan servisi.",
+      "Polyingo için Go programlama dili ile yazılmış bir arka plan servisi.",
     ),
     position: LanguageSensitiveString.en_tr(
       "Backend Developer",
@@ -79,7 +79,7 @@ var tExperiences = [
       "Mobil Uygulama Geliştiricisi",
     ),
     description: LanguageSensitiveString.en_tr(
-      "Used Kotlin and Android Framework to develop social networking applications. Worked with React-Native to re-write some applications written in PhoneGAP.",
+      "Used Kotlin and Android Framework to develop social networking applications. Worked with React-Native.",
       "Kotlin ve React-Native ile ayrı ayrı projeler geliştirerek yeni ve güncel teknolojileri öğrendiğim ilk iş deneyimim.",
     ),
     location: LanguageSensitiveString.en_tr(
@@ -113,15 +113,15 @@ var tExperiences = [
   Experience(
     title: LanguageSensitiveString.en_tr(
       "Makefake - Javascript Library",
-      "",
+      null,
     ),
     description: LanguageSensitiveString.en_tr(
       "Make easier to create data for test, design and other development process needs data to continue fast.",
       "Test ve tasarım ortamları için ihtiyaç duyulabilecek veri şablonlarının kolaylıkla üretilebildiği bir JavaScript kütüphanesi.",
     ),
     position: LanguageSensitiveString.en_tr(
-      "Developer",
-      "",
+      null,
+      null,
     ),
     type: ExperienceType.selfExperience,
     start: DateTime(2015, 4),
