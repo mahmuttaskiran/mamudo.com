@@ -23,8 +23,8 @@ const RESOURCES = {
 "assets/assets/images/polyingo.png": "779aaf4f5e9101d10a38d146a379e16a",
 "assets/assets/localizations/tr.json": "6abb7c8aa5592caf5c2b12147592ce26",
 "assets/assets/localizations/en.json": "d957745e9b8fd4ef41b30c33964e4b8c",
-"assets/assets/about_tr.md": "780252f5226d170446b2cef7e0248665",
-"assets/assets/about_en.md": "78b44c6fdcc9b21aaf64046571cdc85c"
+"assets/assets/about_tr.md": "65819efa90c038494e2ef90c19034626",
+"assets/assets/about_en.md": "c2207b6a677e5d85a478d318f4ac42f6"
 };
 
 self.addEventListener('activate', function (event) {
