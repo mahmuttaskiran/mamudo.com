@@ -120,7 +120,7 @@ var tExperiences = [
       "Test ve tasarım ortamları için ihtiyaç duyulabilecek veri şablonlarının kolaylıkla üretilebildiği bir JavaScript kütüphanesi.",
     ),
     position: LanguageSensitiveString.en_tr(
-      null,
+      "Developerr",
       null,
     ),
     type: ExperienceType.selfExperience,

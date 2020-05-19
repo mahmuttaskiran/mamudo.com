@@ -10,7 +10,9 @@ class FixedCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
     return Card(
-      margin: const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
+      clipBehavior: Clip.antiAlias,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+      margin: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
       child: Container(
         width: width > fixedWidth ? fixedWidth : double.infinity,
         child: child,

@@ -29,6 +29,7 @@ dependencies:
   font_awesome_flutter: ^8.8.1
   url_launcher: ^5.4.7
   intl: ^0.16.1
+  flutter_markdown: ^0.3.5
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -55,6 +56,8 @@ flutter:
     - assets/images/profile_0.jpeg
     - assets/images/blueoperation.webp
     - assets/images/polyingo.png
+    - assets/about_tr.md
+    - assets/about_en.md
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

@@ -9,6 +9,21 @@ class ProfileWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    if (!showActions) {
+      return ListTile(
+        contentPadding: const EdgeInsets.all(10),
+        leading: ClipOval(
+          child: Image.asset(
+            "assets/images/profile_0.jpeg",
+            width: 50,
+            height: 50,
+            fit: BoxFit.cover,
+          ),
+        ),
+        title: Text(tName.get(context)),
+        subtitle: Text(tEmail.get(context)),
+      );
+    }
     return Column(
       mainAxisSize: MainAxisSize.max,
       children: <Widget>[
@@ -46,7 +61,19 @@ class ProfileWidget extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: <Widget>[
-                SizedBox(width: 10),
+                FlatButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, "/about");
+                  },
+                  child: Text(
+                    tAboutMeBtn.get(context),
+                    style: TextStyle(
+                        color: Theme.of(context).brightness == Brightness.light
+                            ? Theme.of(context).primaryColor
+                            : Theme.of(context).accentColor),
+                  ),
+                ),
+                Expanded(child: SizedBox()),
                 OutlineButton(
                   onPressed: () {
                     Navigator.pushNamed(context, "/blogs");

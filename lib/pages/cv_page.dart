@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mamudo_com/app_state.dart';
 import 'package:mamudo_com/constants/translations.dart';
+import 'package:mamudo_com/widgets/about_me_widget.dart';
 import 'package:mamudo_com/widgets/communication.dart';
 import 'package:mamudo_com/widgets/contact.dart';
 import 'package:mamudo_com/widgets/core_components.dart';
@@ -41,6 +42,13 @@ class _CVPageState extends State<CVPage> {
             children: <Widget>[
               SizedBox(height: 10),
               FixedCard(child: ProfileWidget(showActions: false)),
+              FixedCard(
+                child: Padding(
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+                  child: AboutWidget(),
+                ),
+              ),
               FixedCard(child: CoreComponents()),
               FixedCard(child: Experiences()),
               FixedCard(child: Communications()),

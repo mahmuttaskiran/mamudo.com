@@ -14,13 +14,11 @@ class _AboutWidgetState extends State<AboutWidget> {
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    if (content == null) {
-      rootBundle.loadString(tAbout.get(context)).then((value) {
-        setState(() {
-          content = value;
-        });
+    rootBundle.loadString(tAbout.get(context)).then((value) {
+      setState(() {
+        content = value;
       });
-    }
+    });
   }
 
   @override
@@ -32,11 +30,8 @@ class _AboutWidgetState extends State<AboutWidget> {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: <Widget>[
-        ClipRRect(
-          child: CardTitle(tAboutMeBtn.get(context)),
-          borderRadius: BorderRadius.circular(20),
-        ),
-        SizedBox(height: 20),
+        CardTitle(tAboutMeBtn.get(context)),
+        SizedBox(height: 10),
         SelectableText(
           content,
         ),

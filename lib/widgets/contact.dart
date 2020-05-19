@@ -10,14 +10,14 @@ class Contact extends StatelessWidget {
       child: ListTile(
         leading: CircleAvatar(
           backgroundColor: Theme.of(context).accentColor,
-          child: Icon(Icons.mail),
+          child: Icon(Icons.search),
         ),
         title: Text(tContactText.get(context)),
         trailing: IconButton(
           onPressed: () {
             launch("mailto:taskirammahmutt@gmail.com");
           },
-          icon: Icon(Icons.send),
+          icon: Icon(Icons.mail),
         ),
       ),
     );

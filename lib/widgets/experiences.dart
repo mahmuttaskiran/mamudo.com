@@ -4,6 +4,8 @@ import 'package:intl/intl.dart';
 import 'package:mamudo_com/constants/experiences.dart';
 import 'package:mamudo_com/constants/translations.dart';
 import 'package:mamudo_com/models/experience.dart';
+import 'package:mamudo_com/widgets/communication.dart';
+import 'package:mamudo_com/widgets/fixed_card.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class CardTitle extends StatelessWidget {
@@ -15,9 +17,12 @@ class CardTitle extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 25,
-      width: double.infinity,
+      width: 200,
       child: Center(child: Text(title)),
-      color: Theme.of(context).accentColor,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(20),
+        color: Theme.of(context).primaryColor,
+      ),
     );
   }
 }
@@ -29,13 +34,16 @@ class Experiences extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final list = showAll ? tExperiences : tExperiences.sublist(0, 2);
     return Column(
       children: <Widget>[
+        if (!showAll) SizedBox(height: 10),
         if (!showAll) CardTitle(tExperiencesTitle.get(context)),
         ...[
-          for (final e in showAll ? tExperiences : tExperiences.sublist(0, 2))
+          for (var i = 0; i < list.length; i++)
             ExperienceWidget(
-              experience: e,
+              experience: list[i],
+              addDivider: i != list.length - 1,
             )
         ],
         if (!showAll)
@@ -69,8 +77,7 @@ class ExperiencesPage extends StatelessWidget {
         title: Text(tExperiencesTitle.get(context)),
       ),
       body: Center(
-        child: Container(
-          width: width > 500 ? 500 : double.infinity,
+        child: FixedCard(
           child: SingleChildScrollView(
             child: Experiences(
               showAll: true,
@@ -84,8 +91,9 @@ class ExperiencesPage extends StatelessWidget {
 
 class ExperienceWidget extends StatefulWidget {
   final Experience experience;
+  final bool addDivider;
 
-  ExperienceWidget({this.experience});
+  ExperienceWidget({this.experience, this.addDivider = true});
 
   @override
   _ExperienceWidgetState createState() => _ExperienceWidgetState();
@@ -119,11 +127,7 @@ class _ExperienceWidgetState extends State<ExperienceWidget> {
           ),
         ),
         SizedBox(height: 10),
-        Container(
-          width: double.infinity,
-          height: 0.5,
-          color: Colors.grey[900],
-        ),
+        if (widget.addDivider) BlackDivider(),
       ],
     );
   }
@@ -166,7 +170,7 @@ class _ExperienceWidgetState extends State<ExperienceWidget> {
                 size: 12,
               ),
               onDeleted: () {},
-              backgroundColor: positionBackgroundColor,
+              backgroundColor: Theme.of(context).accentColor,
             ),
           ),
         if (widget.experience.appStoreLink != null)
@@ -177,13 +181,13 @@ class _ExperienceWidgetState extends State<ExperienceWidget> {
                 launch(widget.experience.playStoreLink);
               },
               child: Chip(
-                label: Text("AppStore"),
+                label: Text("Go to AppStore"),
                 deleteIcon: Icon(
                   FontAwesomeIcons.appStoreIos,
                   size: 12,
                 ),
                 onDeleted: () {},
-                backgroundColor: positionBackgroundColor,
+                backgroundColor: Theme.of(context).accentColor,
               ),
             ),
           ),
@@ -195,17 +199,16 @@ class _ExperienceWidgetState extends State<ExperienceWidget> {
                 launch(widget.experience.playStoreLink);
               },
               child: Chip(
-                label: Text("PlayStore"),
+                label: Text("Go to PlayStore"),
                 deleteIcon: Icon(
                   FontAwesomeIcons.googlePlay,
                   size: 12,
                 ),
                 onDeleted: () {},
-                backgroundColor: positionBackgroundColor,
+                backgroundColor: Theme.of(context).accentColor,
               ),
             ),
           ),
-        SizedBox(width: 200)
       ],
     );
   }
