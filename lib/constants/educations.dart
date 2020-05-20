@@ -5,15 +5,15 @@ var tEducations = [
   Education(
     start: DateTime(2012),
     end: DateTime(2016),
-    degree: LanguageSensitiveString.en_tr(
+    degree: LanguageSensitiveString.enTr(
       "Bachelor degree",
       "Lisans derecesi",
     ),
-    department: LanguageSensitiveString.en_tr(
+    department: LanguageSensitiveString.enTr(
       "Radio, Television, and Cinema",
       "Radyo, Televizyon ve Sinema",
     ),
-    university: LanguageSensitiveString.en_tr(
+    university: LanguageSensitiveString.enTr(
       "Ege University",
       "Ege Üniversitesi",
     ),
@@ -21,15 +21,15 @@ var tEducations = [
   Education(
     start: DateTime(2017),
     end: DateTime(2019),
-    degree: LanguageSensitiveString.en_tr(
+    degree: LanguageSensitiveString.enTr(
       "Associate",
       "Önlisans",
     ),
-    department: LanguageSensitiveString.en_tr(
+    department: LanguageSensitiveString.enTr(
       "Web Design and Programming",
       "Web Tasarım ve Kodlama",
     ),
-    university: LanguageSensitiveString.en_tr(
+    university: LanguageSensitiveString.enTr(
       "Anadolu University",
       "Anadolu Üniversitesi",
     ),

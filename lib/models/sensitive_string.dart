@@ -13,7 +13,7 @@ class LanguageSensitiveString {
     return lss;
   }
 
-  factory LanguageSensitiveString.en_tr(String en, String tr) {
+  factory LanguageSensitiveString.enTr(String en, String tr) {
     final lss = LanguageSensitiveString._();
     lss.translations[Locale("en")] = en;
     lss.translations[Locale("tr")] = tr;

@@ -71,7 +71,6 @@ class Experiences extends StatelessWidget {
 class ExperiencesPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final width = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
         title: Text(tExperiencesTitle.get(context)),

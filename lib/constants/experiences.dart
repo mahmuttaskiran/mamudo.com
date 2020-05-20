@@ -3,15 +3,15 @@ import 'package:mamudo_com/models/sensitive_string.dart';
 
 var tExperiences = [
   Experience(
-    title: LanguageSensitiveString.en_tr(
+    title: LanguageSensitiveString.enTr(
       "Argeloji",
       "Argeloji",
     ),
-    description: LanguageSensitiveString.en_tr(
+    description: LanguageSensitiveString.enTr(
       "Developing BlueOperation's mobile application for Argeloji. BlueOperation offers RTLS solutions that can actively monitor the location of assets to optimize searching time in a wide range of area facilities such as Airports.",
       "Argeloji'nin bünyesindeki BlueOperation'ın mobil uygulamasını geliştiriyorum. BlueOperation, RTLS çözümleri sunan, havaalanları gibi geniş alan tesislerinde varlıkların arama sürecini optimize eden bir altyapı.",
     ),
-    position: LanguageSensitiveString.en_tr(
+    position: LanguageSensitiveString.enTr(
       "Mobile Application Developer",
       "Mobil Uygulama Geliştiricisi",
     ),
@@ -22,22 +22,22 @@ var tExperiences = [
     playStoreLink:
         "https://play.google.com/store/apps/details?id=com.blueoperation_mobile",
     secondaryLink: "https://www.argeloji.com",
-    location: LanguageSensitiveString.en_tr(
+    location: LanguageSensitiveString.enTr(
       "Istanbul / Turkey",
       "Istanbul",
     ),
-    company: LanguageSensitiveString.en_tr("Argeloji", ""),
+    company: LanguageSensitiveString.enTr("Argeloji", ""),
   ),
   Experience(
-    title: LanguageSensitiveString.en_tr(
+    title: LanguageSensitiveString.enTr(
       "Polyingo - Mobile App",
       "Polyingo - Mobil uygulama",
     ),
-    description: LanguageSensitiveString.en_tr(
+    description: LanguageSensitiveString.enTr(
       "An application that allows users to learn English by watching videos about words.",
       "Kullanıcılara kelimeler hakkında çekilmiş videoları izleterek İngilizce öğrenmelerini sağlayan bir uygulama.",
     ),
-    position: LanguageSensitiveString.en_tr(
+    position: LanguageSensitiveString.enTr(
       "Mobile Application Developer",
       "Mobil Uygulama Geliştiricisi",
     ),
@@ -51,15 +51,15 @@ var tExperiences = [
     secondaryLink: "https://www.polyingo.com",
   ),
   Experience(
-    title: LanguageSensitiveString.en_tr(
+    title: LanguageSensitiveString.enTr(
       "Polyin-Go Backend Service",
       "Polyin-Go Backend Service",
     ),
-    description: LanguageSensitiveString.en_tr(
+    description: LanguageSensitiveString.enTr(
       "Backend service for Polyingo mobile application written in Go.",
       "Polyingo için Go programlama dili ile yazılmış bir arka plan servisi.",
     ),
-    position: LanguageSensitiveString.en_tr(
+    position: LanguageSensitiveString.enTr(
       "Backend Developer",
       "Backend Developer",
     ),
@@ -70,19 +70,19 @@ var tExperiences = [
     secondaryLink: "https://www.polyingo.com",
   ),
   Experience(
-    title: LanguageSensitiveString.en_tr(
+    title: LanguageSensitiveString.enTr(
       "Cekirdek Bilgisayar",
       "Çekirdek Bilgisayar",
     ),
-    position: LanguageSensitiveString.en_tr(
+    position: LanguageSensitiveString.enTr(
       "Mobile Applicatin Developer",
       "Mobil Uygulama Geliştiricisi",
     ),
-    description: LanguageSensitiveString.en_tr(
+    description: LanguageSensitiveString.enTr(
       "Used Kotlin and Android Framework to develop social networking applications. Worked with React-Native.",
       "Kotlin ve React-Native ile ayrı ayrı projeler geliştirerek yeni ve güncel teknolojileri öğrendiğim ilk iş deneyimim.",
     ),
-    location: LanguageSensitiveString.en_tr(
+    location: LanguageSensitiveString.enTr(
       "Istanbul, Turkey",
       "İstanbul",
     ),
@@ -92,15 +92,15 @@ var tExperiences = [
     secondaryLink: "http://cekirdekbilgisayar.com.tr/",
   ),
   Experience(
-    title: LanguageSensitiveString.en_tr(
+    title: LanguageSensitiveString.enTr(
       "Opcon - Mobile Application",
       "Opcon - Mobil uygulama",
     ),
-    description: LanguageSensitiveString.en_tr(
+    description: LanguageSensitiveString.enTr(
       "A mobile application that allows users to send smart rules to each other to manage each other's phones.",
       "Kullanıcıların birbirlerine akıllı kurallar göndererek birbirlerinin telefonlarını yönetmelerini sağlayan bir mobil uygulama.",
     ),
-    position: LanguageSensitiveString.en_tr(
+    position: LanguageSensitiveString.enTr(
       "Fullstack Developer",
       "Fullstack Developer",
     ),
@@ -111,15 +111,15 @@ var tExperiences = [
     isOpenSource: true,
   ),
   Experience(
-    title: LanguageSensitiveString.en_tr(
+    title: LanguageSensitiveString.enTr(
       "Makefake - Javascript Library",
       null,
     ),
-    description: LanguageSensitiveString.en_tr(
+    description: LanguageSensitiveString.enTr(
       "Make easier to create data for test, design and other development process needs data to continue fast.",
       "Test ve tasarım ortamları için ihtiyaç duyulabilecek veri şablonlarının kolaylıkla üretilebildiği bir JavaScript kütüphanesi.",
     ),
-    position: LanguageSensitiveString.en_tr(
+    position: LanguageSensitiveString.enTr(
       "Developerr",
       null,
     ),
