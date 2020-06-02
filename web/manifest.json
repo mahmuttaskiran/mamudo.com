@@ -1,11 +1,11 @@
 {
-    "name": "mamudo_com",
-    "short_name": "mamudo_com",
+    "name": "Mahmut Taskiran",
+    "short_name": "Mahmut Taskiran",
     "start_url": ".",
     "display": "minimal-ui",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "Mahmut Taskiran's personal web site.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
