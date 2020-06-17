@@ -177,7 +177,7 @@ class _ExperienceWidgetState extends State<ExperienceWidget> {
             message: "Go to AppStore",
             child: GestureDetector(
               onTap: () {
-                launch(widget.experience.playStoreLink);
+                launch(widget.experience.appStoreLink);
               },
               child: Chip(
                 label: Text("Go to AppStore"),
