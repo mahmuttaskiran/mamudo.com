@@ -10,7 +10,4 @@ var tCoreComponents = <String>[
   "JavaScript",
   "Html",
   "Css",
-  "Gitlab",
-  "Github",
-  "Bitbucket",
 ];
