@@ -17,9 +17,4 @@ var tCommunications = [
     LanguageSensitiveString.enTr("Turkish", "Türkçe"),
     _nativeLanguage,
   ),
-  Communication(
-    Locale("ku"),
-    LanguageSensitiveString.enTr("Kurdish", "Kürtçe"),
-    _nativeLanguage,
-  ),
 ];
