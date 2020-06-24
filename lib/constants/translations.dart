@@ -1,7 +1,7 @@
 import 'package:mamudo_com/models/sensitive_string.dart';
 
 final tContactText = LanguageSensitiveString.enTr(
-  "Do you looking for a mobile application developer? Feel free to contact me.",
+  "Do you look for a mobile application developer? Feel free to contact me.",
   "Bir mobil uygulama geliştiricisine mi ihtiyaç duyuyorsun? Benimle iletişime geçin.",
 );
 

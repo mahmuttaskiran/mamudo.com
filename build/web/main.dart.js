@@ -53005,7 +53005,7 @@ r=L.ad("Make easier to create data for test, design and other development proces
 d=L.ad("Developerr",l)
 p=P.dT(2015,4,1,0,0,0,0)
 return H.a([e,b,c,a,q,Z.p1(l,l,l,r,P.dT(2016,1,1,0,0,0,0),!0,l,l,d,f,p,s,C.iq)],H.ac("t<zd>"))})
-t($,"ahC","a8t",function(){return L.ad("Do you looking for a mobile application developer? Feel free to contact me.","Bir mobil uygulama geli\u015ftiricisine mi ihtiya\xe7 duyuyorsun? Benimle ileti\u015fime ge\xe7in.")})
+t($,"ahC","a8t",function(){return L.ad("Do you look for a mobile application developer? Feel free to contact me.","Bir mobil uygulama geli\u015ftiricisine mi ihtiya\xe7 duyuyorsun? Benimle ileti\u015fime ge\xe7in.")})
 t($,"ahM","a8y",function(){return H.a([L.ad("Mobile Application Developer","Mobil Uygulama Geli\u015ftiricisi"),L.ad("Thinker","D\xfc\u015f\xfcnen adam"),L.ad("Runner","Ko\u015fan adam"),L.ad("Blogger","Yazan adam")],H.ac("t<A0>"))})
 t($,"ahP","a8B",function(){return L.ad("I am in love with programming since I was 15 years old. I love learning, running, walking, writing...","15'li ya\u015flar\u0131mdan beri programlamaya a\u015f\u0131\u011f\u0131m. \xd6\u011frenmeyi, y\xfcr\xfcmeyi, ko\u015fmay\u0131 ve de yazmay\u0131 seviyorum.")})
 t($,"ahG","a8v",function(){return L.ad("taskiranmahmutt@gmail.com",null)})
