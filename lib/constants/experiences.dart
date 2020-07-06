@@ -80,7 +80,7 @@ var tExperiences = [
     ),
     description: LanguageSensitiveString.enTr(
       "Used Kotlin and Android Framework to develop social networking applications. Worked with React-Native.",
-      "Kotlin ve React-Native ile ayrı ayrı projeler geliştirerek yeni ve güncel teknolojileri öğrendiğim ilk iş deneyimim.",
+      "Kotlin ve React-Native ile ayrı ayrı projeler geliştirerek yeni ve güncel teknolojileri öğrendiğim ilk tam zamanlı iş deneyimim.",
     ),
     location: LanguageSensitiveString.enTr(
       "Istanbul, Turkey",
