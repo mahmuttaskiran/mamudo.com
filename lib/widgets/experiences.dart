@@ -138,7 +138,7 @@ class _ExperienceWidgetState extends State<ExperienceWidget> {
       crossAxisAlignment: WrapCrossAlignment.end,
       runAlignment: WrapAlignment.end,
       spacing: 5,
-      runSpacing: -10,
+      runSpacing: 10,
       children: <Widget>[
         Chip(
           label: Text(
@@ -169,7 +169,6 @@ class _ExperienceWidgetState extends State<ExperienceWidget> {
                 size: 12,
               ),
               onDeleted: () {},
-              backgroundColor: Theme.of(context).accentColor,
             ),
           ),
         if (widget.experience.appStoreLink != null)
@@ -186,7 +185,6 @@ class _ExperienceWidgetState extends State<ExperienceWidget> {
                   size: 12,
                 ),
                 onDeleted: () {},
-                backgroundColor: Theme.of(context).accentColor,
               ),
             ),
           ),
@@ -204,7 +202,6 @@ class _ExperienceWidgetState extends State<ExperienceWidget> {
                   size: 12,
                 ),
                 onDeleted: () {},
-                backgroundColor: Theme.of(context).accentColor,
               ),
             ),
           ),

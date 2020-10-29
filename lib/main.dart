@@ -30,7 +30,7 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       title: tName.get(context),
       theme: ThemeData(
-        primarySwatch: Colors.red,
+        primarySwatch: Colors.lightBlue,
         accentColor: Colors.grey,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),

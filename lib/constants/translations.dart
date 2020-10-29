@@ -2,7 +2,7 @@ import 'package:mamudo_com/models/sensitive_string.dart';
 
 final tContactText = LanguageSensitiveString.enTr(
   "Do you look for a mobile application developer? Feel free to contact me.",
-  "Bir mobil uygulama geliştiricisine mi ihtiyaç duyuyorsun? Benimle iletişime geçin.",
+  "Bir mobil uygulama geliştiricisine mi ihtiyaç duyuyorsun? Benimle iletişime geç.",
 );
 
 final tProfessions = [
@@ -42,7 +42,7 @@ final tCommunicationsTitle =
     LanguageSensitiveString.enTr("Communucation", "İletişim");
 final tBlogsTitle = LanguageSensitiveString.enTr("Blogs", "Blog yazıları");
 
-final tCvBtn = LanguageSensitiveString.enTr("CV", "CV");
+final tCvBtn = LanguageSensitiveString.enTr("Resume", "Özgeçmiş");
 
 final tAbout =
     LanguageSensitiveString.enTr("assets/about_en.txt", "assets/about_tr.txt");

@@ -28,14 +28,7 @@ class ProfileWidget extends StatelessWidget {
       mainAxisSize: MainAxisSize.max,
       children: <Widget>[
         SizedBox(height: 15),
-        ClipOval(
-          child: Image.asset(
-            "assets/images/profile_0.jpeg",
-            width: 100,
-            height: 100,
-            fit: BoxFit.cover,
-          ),
-        ),
+        ProfileImageWithPlaceholder(width: 100,height: 100,),
         SizedBox(height: 10),
         Text(tName.get(context), style: Theme.of(context).textTheme.headline5),
         SizedBox(height: 10),
@@ -100,3 +93,27 @@ class ProfileWidget extends StatelessWidget {
     );
   }
 }
+
+class ProfileImageWithPlaceholder extends StatelessWidget {
+  final double width;
+  final double height;
+  ProfileImageWithPlaceholder({this.height = 50, this.width = 50});
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      alignment: Alignment.center,
+      children: [
+        ClipOval(child: Container(width: width,height: height, color: Colors.red,)),
+        ClipOval(
+          child: Image.asset(
+            "assets/images/profile_0.jpeg",
+            width: width -2,
+            height: height -2,
+            fit: BoxFit.cover,
+          ),
+        ),
+      ],
+    );
+  }
+}
+
