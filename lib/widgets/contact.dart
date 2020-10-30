@@ -15,7 +15,7 @@ class Contact extends StatelessWidget {
         title: Text(tContactText.get(context)),
         trailing: IconButton(
           onPressed: () {
-            launch("mailto:taskirammahmutt@gmail.com");
+            launch("mailto:taskiranmahmutt@gmail.com");
           },
           icon: Icon(Icons.mail),
         ),
