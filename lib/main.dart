@@ -33,12 +33,14 @@ class _MyAppState extends State<MyApp> {
         primarySwatch: Colors.lightBlue,
         accentColor: Colors.grey,
         visualDensity: VisualDensity.adaptivePlatformDensity,
+        fontFamily: "Raleway"
       ),
       darkTheme: ThemeData(
         brightness: Brightness.dark,
         primarySwatch: Colors.blueGrey,
         accentColor: Colors.lightBlueAccent,
         visualDensity: VisualDensity.adaptivePlatformDensity,
+        fontFamily: "Raleway"
       ),
       routes: {
         "/": (_) => HomePage(),
