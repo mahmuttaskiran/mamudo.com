@@ -3,6 +3,19 @@ import 'package:mamudo_com/models/sensitive_string.dart';
 
 var tExperiences = [
   Experience(
+      title: LanguageSensitiveString.enTr(
+        "Path - Digital Experiences",
+        "Path - Digital Experiences",
+      ),
+      position: LanguageSensitiveString.enTr(
+        "Android Developer",
+        "Android Geliştiricisi",
+      ),
+      type: ExperienceType.professionalExperience,
+      start: DateTime(2021, 1),
+      company: LanguageSensitiveString.en("Path - Digital Experiences"),
+      secondaryLink: "https://www.path.com.tr"),
+  Experience(
     title: LanguageSensitiveString.enTr(
       "Argeloji",
       "Argeloji",
@@ -18,7 +31,7 @@ var tExperiences = [
     type: ExperienceType.professionalExperience,
     assetImage: "assets/images/blueoperation.webp",
     start: DateTime(2019, 6),
-    end: DateTime(2020,7),
+    end: DateTime(2020, 7),
     playStoreLink:
         "https://play.google.com/store/apps/details?id=com.blueoperation_mobile",
     secondaryLink: "https://www.argeloji.com",
@@ -87,7 +100,7 @@ var tExperiences = [
       "İstanbul",
     ),
     start: DateTime(2017, 7),
-    end: DateTime(2018,5),
+    end: DateTime(2018, 5),
     type: ExperienceType.professionalExperience,
     secondaryLink: "http://cekirdekbilgisayar.com.tr/",
   ),
