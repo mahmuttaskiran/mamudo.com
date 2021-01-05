@@ -7,6 +7,7 @@ var tExperiences = [
         "Path - Digital Experiences",
         "Path - Digital Experiences",
       ),
+      description: LanguageSensitiveString.enTr("path.com.tr", "path.com.tr"),
       position: LanguageSensitiveString.enTr(
         "Android Developer",
         "Android Geliştiricisi",
