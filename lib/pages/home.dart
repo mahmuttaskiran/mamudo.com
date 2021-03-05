@@ -5,8 +5,8 @@ import 'package:mamudo_com/widgets/profile.dart';
 import 'package:mamudo_com/widgets/social.dart';
 
 class HomePage extends StatefulWidget {
-  HomePage({Key key, this.title}) : super(key: key);
-  final String title;
+  HomePage({Key? key, this.title}) : super(key: key);
+  final String? title;
 
   @override
   _HomePageState createState() => _HomePageState();

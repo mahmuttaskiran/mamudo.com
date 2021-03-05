@@ -22,13 +22,13 @@ class _CVPageState extends State<CVPage> {
       appBar: AppBar(
         title: Text(tCvBtn.get(context)),
         actions: <Widget>[
-          FlatButton(
+          TextButton(
             onPressed: () {
               GlobalAppState().locale = GlobalAppState().opponentLocale;
             },
             child: Text(GlobalAppState().opponentLocaleName),
           ),
-          FlatButton(
+          TextButton(
             onPressed: () {
               GlobalAppState().themeMode = GlobalAppState().opponentThemeMode;
             },

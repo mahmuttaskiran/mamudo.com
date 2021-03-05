@@ -17,7 +17,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  Locale locale;
+  Locale? locale;
 
   @override
   void initState() {
@@ -28,7 +28,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: tName.get(context),
+      title: tName.getEnValue(),
       theme: ThemeData(
         primarySwatch: Colors.lightBlue,
         accentColor: Colors.grey,

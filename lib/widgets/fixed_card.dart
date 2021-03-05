@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class FixedCard extends StatelessWidget {
-  final Widget child;
+  final Widget? child;
   final double fixedWidth;
 
   FixedCard({this.child, this.fixedWidth = 500});
@@ -23,7 +23,7 @@ class FixedCard extends StatelessWidget {
 }
 
 class FixedContainer extends StatelessWidget {
-  final Widget child;
+  final Widget? child;
   final double fixedWidth;
 
   FixedContainer({this.child, this.fixedWidth = 500});

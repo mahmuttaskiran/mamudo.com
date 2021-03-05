@@ -9,7 +9,7 @@ class GlobalAppState {
   Locale _appLocale = Locale("en");
   ThemeMode _themeMode = ThemeMode.dark;
 
-  Function appStateListener;
+  Function? appStateListener;
 
   Locale get appLocale => _appLocale;
 
@@ -18,14 +18,14 @@ class GlobalAppState {
   set locale(Locale v) {
     _appLocale = v;
     if (appStateListener != null) {
-      appStateListener();
+      appStateListener!();
     }
   }
 
   set themeMode(ThemeMode mode) {
     _themeMode = mode;
     if (appStateListener != null) {
-      appStateListener();
+      appStateListener!();
     }
   }
 

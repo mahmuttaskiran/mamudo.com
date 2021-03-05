@@ -9,7 +9,7 @@ import 'package:mamudo_com/widgets/fixed_card.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class CardTitle extends StatelessWidget {
-  final String title;
+  final String? title;
 
   CardTitle(this.title);
 
@@ -18,7 +18,7 @@ class CardTitle extends StatelessWidget {
     return Container(
       height: 25,
       width: 200,
-      child: Center(child: Text(title)),
+      child: Center(child: Text(title!)),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
         color: Theme.of(context).primaryColor,
@@ -89,7 +89,7 @@ class ExperiencesPage extends StatelessWidget {
 }
 
 class ExperienceWidget extends StatefulWidget {
-  final Experience experience;
+  final Experience? experience;
   final bool addDivider;
 
   ExperienceWidget({this.experience, this.addDivider = true});
@@ -114,8 +114,8 @@ class _ExperienceWidgetState extends State<ExperienceWidget> {
             ),
             backgroundColor: Theme.of(context).accentColor,
           ),
-          title: Text(widget.experience.title.get(context)),
-          subtitle: Text(widget.experience.description.get(context)),
+          title: Text(widget.experience!.title!.get(context)),
+          subtitle: Text(widget.experience!.description!.get(context)),
           trailing: trailing,
         ),
         Align(
@@ -142,25 +142,24 @@ class _ExperienceWidgetState extends State<ExperienceWidget> {
       children: <Widget>[
         Chip(
           label: Text(
-              widget.experience.type == ExperienceType.professionalExperience
-                  ? tProfessionalExperience.get(context)
-                  : tSelfExperience.get(context)),
+              widget.experience!.type == ExperienceType.professionalExperience
+                  ? tProfessionalExperience.get(context): tSelfExperience.get(context)),
           backgroundColor: positionBackgroundColor,
         ),
-        if (widget.experience.position != null)
+        if (widget.experience!.position != null)
           Chip(
-            label: Text(widget.experience.position.get(context)),
+            label: Text(widget.experience!.position!.get(context)),
             backgroundColor: positionBackgroundColor,
           ),
-        if (widget.experience.location != null)
+        if (widget.experience!.location != null)
           Chip(
-            label: Text(widget.experience.location.get(context)),
+            label: Text(widget.experience!.location!.get(context)),
             backgroundColor: positionBackgroundColor,
           ),
-        if (widget.experience.isOpenSource)
+        if (widget.experience!.isOpenSource)
           GestureDetector(
             onTap: () {
-              launch(widget.experience.secondaryLink);
+              launch(widget.experience!.secondaryLink!);
             },
             child: Chip(
               label: Text(tOpenSource.get(context)),
@@ -171,12 +170,12 @@ class _ExperienceWidgetState extends State<ExperienceWidget> {
               onDeleted: () {},
             ),
           ),
-        if (widget.experience.appStoreLink != null)
+        if (widget.experience!.appStoreLink != null)
           Tooltip(
             message: "Go to AppStore",
             child: GestureDetector(
               onTap: () {
-                launch(widget.experience.appStoreLink);
+                launch(widget.experience!.appStoreLink!);
               },
               child: Chip(
                 label: Text("Go to AppStore"),
@@ -188,12 +187,12 @@ class _ExperienceWidgetState extends State<ExperienceWidget> {
               ),
             ),
           ),
-        if (widget.experience.playStoreLink != null)
+        if (widget.experience!.playStoreLink != null)
           Tooltip(
             message: "Go to PlayStore",
             child: GestureDetector(
               onTap: () {
-                launch(widget.experience.playStoreLink);
+                launch(widget.experience!.playStoreLink!);
               },
               child: Chip(
                 label: Text("Go to PlayStore"),
@@ -210,37 +209,37 @@ class _ExperienceWidgetState extends State<ExperienceWidget> {
   }
 
   String get dateStr {
-    final s = DateFormat.yM().format(widget.experience.start);
-    String e;
-    if (widget.experience.end != null) {
-      e = DateFormat.yM().format(widget.experience.end);
+    final s = DateFormat.yM().format(widget.experience!.start!);
+    String? e;
+    if (widget.experience!.end != null) {
+      e = DateFormat.yM().format(widget.experience!.end!);
     }
     return e == null ? s : s + "\n" + e;
   }
 
-  Widget get trailing {
-    if (widget.experience.isOpenSource) {
+  Widget? get trailing {
+    if (widget.experience!.isOpenSource) {
       return Tooltip(
-        message: widget.experience.secondaryLink,
+        message: widget.experience!.secondaryLink!,
         child: GestureDetector(
           onTap: () {
-            launch(widget.experience.secondaryLink);
+            launch(widget.experience!.secondaryLink!);
           },
           child: CircleAvatar(
             child: Icon(FontAwesomeIcons.github),
           ),
         ),
       );
-    } else if (widget.experience.assetImage != null) {
+    } else if (widget.experience!.assetImage != null) {
       return Tooltip(
-        message: widget.experience.secondaryLink,
+        message: widget.experience!.secondaryLink!,
         child: GestureDetector(
           onTap: () {
-            launch(widget.experience.secondaryLink);
+            launch(widget.experience!.secondaryLink!);
           },
           child: ClipOval(
             child: Image.asset(
-              widget.experience.assetImage,
+              widget.experience!.assetImage!,
               width: 40,
               height: 40,
               fit: BoxFit.contain,

@@ -6,18 +6,18 @@ enum ExperienceType {
 }
 
 class Experience {
-  LanguageSensitiveString title;
-  LanguageSensitiveString description;
-  String assetImage;
-  DateTime start;
-  DateTime end;
-  String playStoreLink;
-  String appStoreLink;
-  String secondaryLink;
-  ExperienceType type;
-  LanguageSensitiveString position;
-  LanguageSensitiveString location;
-  LanguageSensitiveString company;
+  LanguageSensitiveString? title;
+  LanguageSensitiveString? description;
+  String? assetImage;
+  DateTime? start;
+  DateTime? end;
+  String? playStoreLink;
+  String? appStoreLink;
+  String? secondaryLink;
+  ExperienceType? type;
+  LanguageSensitiveString? position;
+  LanguageSensitiveString? location;
+  LanguageSensitiveString? company;
 
   bool isOpenSource;
 

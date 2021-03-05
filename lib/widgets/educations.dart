@@ -20,9 +20,9 @@ class Educations extends StatelessWidget {
               children: <Widget>[
                 ListTile(
                   dense: true,
-                  title: Text(tEducations[i].university.get(context)),
-                  subtitle: Text(tEducations[i].department.get(context)),
-                  trailing: Text(tEducations[i].degree.get(context)),
+                  title: Text(tEducations[i].university!.get(context)),
+                  subtitle: Text(tEducations[i].department!.get(context)),
+                  trailing: Text(tEducations[i].degree!.get(context)),
                   leading: CircleAvatar(
                     radius: 25,
                     child: Text(
@@ -42,10 +42,10 @@ class Educations extends StatelessWidget {
   }
 
   String getTime(Education ed) {
-    final s = DateFormat.yM().format(ed.start);
-    String e;
+    final s = DateFormat.yM().format(ed.start!);
+    String? e;
     if (ed.end != null) {
-      e = DateFormat.yM().format(ed.end);
+      e = DateFormat.yM().format(ed.end!);
     }
     return e == null ? s : s + "\n" + e;
   }

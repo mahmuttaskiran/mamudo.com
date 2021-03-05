@@ -22,7 +22,7 @@ class BlogsWidget extends StatelessWidget {
                 contentPadding: const EdgeInsets.all(15),
                 title: Text(f.title.get(context)),
                 onTap: () {
-                  launch(f.link);
+                  launch(f.link!);
                 },
                 subtitle: Text(
                   f.content.get(context),

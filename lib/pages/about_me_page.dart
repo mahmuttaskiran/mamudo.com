@@ -19,13 +19,13 @@ class AboutMePage extends StatelessWidget {
       appBar: AppBar(
         title: Text(tAboutMeTitle.get(context)),
         actions: <Widget>[
-          FlatButton(
+          TextButton(
             onPressed: () {
               GlobalAppState().locale = GlobalAppState().opponentLocale;
             },
             child: Text(GlobalAppState().opponentLocaleName),
           ),
-          FlatButton(
+          TextButton(
             onPressed: () {
               GlobalAppState().themeMode = GlobalAppState().opponentThemeMode;
             },

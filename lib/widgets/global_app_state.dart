@@ -16,13 +16,13 @@ class GlobalAppStateWidget extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.end,
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
-            FlatButton(
+            TextButton(
               onPressed: () {
                 GlobalAppState().locale = GlobalAppState().opponentLocale;
               },
               child: Text(GlobalAppState().opponentLocaleName),
             ),
-            OutlineButton(
+            OutlinedButton(
               onPressed: () {
                 GlobalAppState().themeMode = GlobalAppState().opponentThemeMode;
               },

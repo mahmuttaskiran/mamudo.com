@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class WebSensitiveContainer extends StatelessWidget {
-  final Widget child;
+  final Widget? child;
   WebSensitiveContainer({this.child});
   @override
   Widget build(BuildContext context) {

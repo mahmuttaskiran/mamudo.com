@@ -9,7 +9,7 @@ class AboutWidget extends StatefulWidget {
 }
 
 class _AboutWidgetState extends State<AboutWidget> {
-  String content;
+  String? content;
 
   @override
   void didChangeDependencies() {
@@ -33,7 +33,7 @@ class _AboutWidgetState extends State<AboutWidget> {
         CardTitle(tAboutMeBtn.get(context)),
         SizedBox(height: 10),
         SelectableText(
-          content,
+          content!,
         ),
       ],
     );
