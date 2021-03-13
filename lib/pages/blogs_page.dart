@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mamudo_com/constants/translations.dart';
 import 'package:mamudo_com/widgets/blog.dart';
 import 'package:mamudo_com/widgets/fixed_card.dart';
+import 'package:mamudo_com/widgets/global_app_state.dart';
 
 class BlogsPage extends StatefulWidget {
   @override
@@ -15,6 +16,9 @@ class _BlogsPageState extends State<BlogsPage> {
       appBar: AppBar(
         title: Text(tBlogsTitle.get(context)),
         centerTitle: true,
+        actions: [
+          GlobalAppStateWidget(padding: const EdgeInsets.only(right: 15),)
+        ],
       ),
       body: Center(
         child: FixedCard(

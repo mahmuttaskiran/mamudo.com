@@ -12,7 +12,7 @@ class FixedCard extends StatelessWidget {
     return Card(
       clipBehavior: Clip.antiAlias,
       shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(width > fixedWidth ? 5 : 5)),
+          borderRadius: BorderRadius.circular(width > fixedWidth ? 20 : 10)),
       margin: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
       child: Container(
         width: width > fixedWidth ? fixedWidth : double.infinity,

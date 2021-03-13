@@ -20,16 +20,16 @@ class LanguageSensitiveString {
     return lss;
   }
 
-  String getValue(Locale locale) {
-    return translations[locale] ?? "Localization not found for $locale.";
+  String? getValue(Locale locale) {
+    return translations[locale];
   }
 
-  String getEnValue() {
-    return getValue(Locale("en"));
+  String getEnOrTrValue() {
+    return getValue(Locale("en")) ?? getValue(Locale("tr")) ?? "";
   }
 
   String get(BuildContext context) {
     final locale = Localizations.localeOf(context);
-    return getValue(locale);
+    return getValue(locale) ?? getEnOrTrValue();
   }
 }

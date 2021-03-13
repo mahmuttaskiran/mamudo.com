@@ -13,9 +13,9 @@ class SocialLink {
 
 const socialLinks = [
   SocialLink(FontAwesomeIcons.github, "Github",
-      "https://github.com/mahmuttaskiran", Colors.black),
+      "https://github.com/mahmuttaskiran", Colors.grey),
   SocialLink(FontAwesomeIcons.medium, "Medium",
-      "https://medium.com/@taskiranmahmut", Colors.black),
+      "https://medium.com/@taskiranmahmut", Colors.orangeAccent),
   SocialLink(FontAwesomeIcons.linkedin, "LinkedIn",
       "https://www.linkedin.com/in/mahmutaskiran/", Colors.blue),
   SocialLink(

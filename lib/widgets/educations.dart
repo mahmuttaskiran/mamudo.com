@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:intl/intl.dart';
 import 'package:mamudo_com/constants/educations.dart';
 import 'package:mamudo_com/constants/translations.dart';
@@ -22,15 +23,11 @@ class Educations extends StatelessWidget {
                   dense: true,
                   title: Text(tEducations[i].university!.get(context)),
                   subtitle: Text(tEducations[i].department!.get(context)),
-                  trailing: Text(tEducations[i].degree!.get(context)),
+                  trailing: Text(tEducations[i].degree!.get(context)  + "\n" + getTime(tEducations[i]), textAlign: TextAlign.end,),
                   leading: CircleAvatar(
                     radius: 25,
-                    child: Text(
-                      getTime(tEducations[i]),
-                      style: TextStyle(fontSize: 11),
-                      textAlign: TextAlign.center,
-                    ),
                     backgroundColor: Theme.of(context).accentColor,
+                    child: Icon(FontAwesomeIcons.university, size: 18,),
                   ),
                 ),
                 if (tEducations.length - 1 != i) BlackDivider(),
@@ -42,11 +39,11 @@ class Educations extends StatelessWidget {
   }
 
   String getTime(Education ed) {
-    final s = DateFormat.yM().format(ed.start!);
+    final s = DateFormat.y().format(ed.start!);
     String? e;
     if (ed.end != null) {
-      e = DateFormat.yM().format(ed.end!);
+      e = DateFormat.y().format(ed.end!);
     }
-    return e == null ? s : s + "\n" + e;
+    return e == null ? s : s + " - " + e;
   }
 }

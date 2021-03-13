@@ -34,4 +34,19 @@ var tEducations = [
       "Anadolu Üniversitesi",
     ),
   ),
+  Education(
+    start: DateTime(2020),
+    degree: LanguageSensitiveString.enTr(
+      "Bachelor degree",
+      "Lisans derecesi",
+    ),
+    department: LanguageSensitiveString.enTr(
+      "Management Information System",
+      "Yönetim Bilişim Sistemleri",
+    ),
+    university: LanguageSensitiveString.enTr(
+      "Anadolu University",
+      "Anadolu Üniversitesi",
+    ),
+  ),
 ];

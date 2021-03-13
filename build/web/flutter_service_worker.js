@@ -4,20 +4,19 @@ const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 const RESOURCES = {
   "version.json": "ef25ad5ad2bb3df3df0a48ae43df80b1",
-"index.html": "ec0b31e9895a50fc9f108218624bf7db",
-"/": "ec0b31e9895a50fc9f108218624bf7db",
-"main.dart.js": "278dcc496afb20f901bcc76ce884a51d",
-"mahmuttaskiran_en.pages": "90bd50c16b3d1e336e45c5b18808bdf3",
+"index.html": "60bbe50a8fd6ad04c4d5a4a4cc442e29",
+"/": "60bbe50a8fd6ad04c4d5a4a4cc442e29",
+"main.dart.js": "5c923913dcd4b42b2b2724d039306f88",
+"mahmuttaskiran_en.pages": "f7b39379ab390ce46a026cbf3ff04492",
 "favicon.png": "1204d469df2daf2943f170e70e101660",
 "icons/Icon-192.png": "ac9a721a12bbc803b44f645561ecb1e1",
 "icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
 "loading.css": "0fc77b236a1cc4bf29d7ce0da8597510",
 "manifest.json": "ff4a522dba6d945bfd150edef1b601af",
-"mahmuttaskiran_tr.pdf": "7b21f5726e89bd8e838d5b5dbb8bea7f",
-"assets/AssetManifest.json": "c021d7cdee673161ab59580000a2b672",
-"assets/NOTICES": "ad8c5fe982e6105f9755865140f6a950",
-"assets/FontManifest.json": "5a32d4310a6f5d9a6b651e75ba0d7372",
-"assets/packages/cupertino_icons/assets/CupertinoIcons.ttf": "115e937bb829a890521f72d2e664b632",
+"mahmuttaskiran_tr.pdf": "b82003522719bf8d5b471c844f8bab2d",
+"assets/AssetManifest.json": "3b02174b2d6d6ec71e085846436c30e0",
+"assets/NOTICES": "a6c1443ecfacd87917bfa1a4ed6d471e",
+"assets/FontManifest.json": "3ddd9b2ab1c2ae162d46e3cc7b78ba88",
 "assets/packages/font_awesome_flutter/lib/fonts/fa-solid-900.ttf": "d80ca32233940ebadc5ae5372ccd67f9",
 "assets/packages/font_awesome_flutter/lib/fonts/fa-regular-400.ttf": "a126c025bab9a1b4d8ac5534af76a208",
 "assets/packages/font_awesome_flutter/lib/fonts/fa-brands-400.ttf": "831eb40a2d76095849ba4aecd4340f19",
@@ -29,8 +28,8 @@ const RESOURCES = {
 "assets/assets/about_en.txt": "45d3f50ffcc672a82d2bd30274b3f0ec",
 "assets/assets/localizations/tr.json": "6abb7c8aa5592caf5c2b12147592ce26",
 "assets/assets/localizations/en.json": "d957745e9b8fd4ef41b30c33964e4b8c",
-"mahmuttaskiran_tr.pages": "ac6a31b0eec26a09869c686b397241a4",
-"mahmuttaskiran_en.pdf": "472b8d8dc71aa3c160249cd57210eb46"
+"mahmuttaskiran_tr.pages": "c87e3c6ade693ba44465d54b0b3086bb",
+"mahmuttaskiran_en.pdf": "2f3e2c4e5b1f8e6b508b9f10cd70f81a"
 };
 
 // The application shell files that are downloaded before a service worker can
@@ -174,7 +173,7 @@ async function downloadOffline() {
     }
     currentContent[key] = true;
   }
-  for (var resourceKey in Object.keys(RESOURCES)) {
+  for (var resourceKey of Object.keys(RESOURCES)) {
     if (!currentContent[resourceKey]) {
       resources.push(resourceKey);
     }

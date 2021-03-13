@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:mamudo_com/constants/translations.dart';
@@ -64,10 +66,7 @@ class ProfileWidget extends StatelessWidget {
                     },
                     child: Text(
                       tAboutMeBtn.get(context),
-                      style: TextStyle(
-                          color: Theme.of(context).brightness == Brightness.light
-                              ? Theme.of(context).primaryColor
-                              : Theme.of(context).accentColor),
+                      style: TextStyle(fontStyle: FontStyle.italic),
                     ),
                   ),
                   Expanded(child: SizedBox()),

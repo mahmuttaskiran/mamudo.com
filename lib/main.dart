@@ -28,7 +28,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: tName.getEnValue(),
+      title: tName.getEnOrTrValue(),
       theme: ThemeData(
         primarySwatch: Colors.lightBlue,
         accentColor: Colors.grey,

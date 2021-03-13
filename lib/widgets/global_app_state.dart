@@ -5,9 +5,12 @@ import '../app_state.dart';
 
 class GlobalAppStateWidget extends StatelessWidget {
   final EdgeInsets padding;
+
   GlobalAppStateWidget({this.padding = const EdgeInsets.all(0)});
+
   @override
   Widget build(BuildContext context) {
+    final textStyle = TextStyle(color: Colors.black);
     return Padding(
       padding: padding,
       child: Container(
@@ -20,13 +23,23 @@ class GlobalAppStateWidget extends StatelessWidget {
               onPressed: () {
                 GlobalAppState().locale = GlobalAppState().opponentLocale;
               },
-              child: Text(GlobalAppState().opponentLocaleName),
+              child: Text(
+                GlobalAppState().opponentLocaleName,
+                style: Theme.of(context).brightness == Brightness.light
+                    ? textStyle
+                    : null,
+              ),
             ),
             OutlinedButton(
               onPressed: () {
                 GlobalAppState().themeMode = GlobalAppState().opponentThemeMode;
               },
-              child: Text(GlobalAppState().opponentThemeModeString),
+              child: Text(
+                GlobalAppState().opponentThemeModeString,
+                style: Theme.of(context).brightness == Brightness.light
+                    ? textStyle
+                    : null,
+              ),
             )
           ],
         ),

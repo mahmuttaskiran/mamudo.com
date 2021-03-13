@@ -8,6 +8,8 @@ import 'package:mamudo_com/widgets/communication.dart';
 import 'package:mamudo_com/widgets/fixed_card.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import 'global_app_state.dart';
+
 class CardTitle extends StatelessWidget {
   final String? title;
 
@@ -74,6 +76,9 @@ class ExperiencesPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(tExperiencesTitle.get(context)),
+        actions: [
+          GlobalAppStateWidget(padding: const EdgeInsets.only(right: 15),)
+        ],
       ),
       body: Center(
         child: FixedCard(
