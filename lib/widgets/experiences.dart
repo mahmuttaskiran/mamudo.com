@@ -145,7 +145,7 @@ class _ExperienceWidgetState extends State<ExperienceWidget> {
       crossAxisAlignment: WrapCrossAlignment.end,
       runAlignment: WrapAlignment.end,
       spacing: 5,
-      runSpacing: 10,
+      runSpacing: 5,
       children: <Widget>[
         Chip(
           label: Text(

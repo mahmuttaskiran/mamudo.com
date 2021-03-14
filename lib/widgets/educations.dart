@@ -19,15 +19,26 @@ class Educations extends StatelessWidget {
           for (var i = 0; i < tEducations.length; i++)
             Column(
               children: <Widget>[
-                ListTile(
-                  dense: true,
-                  title: Text(tEducations[i].university!.get(context)),
-                  subtitle: Text(tEducations[i].department!.get(context)),
-                  trailing: Text(tEducations[i].degree!.get(context)  + "\n" + getTime(tEducations[i]), textAlign: TextAlign.end,),
-                  leading: CircleAvatar(
-                    radius: 25,
-                    backgroundColor: Theme.of(context).accentColor,
-                    child: Icon(FontAwesomeIcons.university, size: 18,),
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 5),
+                  child: ListTile(
+                    dense: true,
+                    title: Text(tEducations[i].university!.get(context)),
+                    subtitle: Text(tEducations[i].department!.get(context)),
+                    trailing: Text(
+                      tEducations[i].degree!.get(context) +
+                          "\n" +
+                          getTime(tEducations[i]),
+                      textAlign: TextAlign.end,
+                    ),
+                    leading: CircleAvatar(
+                      radius: 25,
+                      backgroundColor: Theme.of(context).accentColor,
+                      child: Icon(
+                        FontAwesomeIcons.university,
+                        size: 18,
+                      ),
+                    ),
                   ),
                 ),
                 if (tEducations.length - 1 != i) BlackDivider(),
