@@ -148,6 +148,7 @@ class _ExperienceWidgetState extends State<ExperienceWidget> {
       runSpacing: 5,
       children: <Widget>[
         Chip(
+          useDeleteButtonTooltip: false,
           label: Text(
               widget.experience!.type == ExperienceType.professionalExperience
                   ? tProfessionalExperience.get(context)
@@ -156,11 +157,13 @@ class _ExperienceWidgetState extends State<ExperienceWidget> {
         ),
         if (widget.experience!.position != null)
           Chip(
+            useDeleteButtonTooltip: false,
             label: Text(widget.experience!.position!.get(context)),
             backgroundColor: positionBackgroundColor,
           ),
         if (widget.experience!.location != null)
           Chip(
+            useDeleteButtonTooltip: false,
             label: Text(widget.experience!.location!.get(context)),
             backgroundColor: positionBackgroundColor,
           ),
@@ -170,6 +173,7 @@ class _ExperienceWidgetState extends State<ExperienceWidget> {
               launch(widget.experience!.secondaryLink!);
             },
             child: Chip(
+              useDeleteButtonTooltip: false,
               label: Text(tOpenSource.get(context)),
               deleteIcon: Icon(
                 FontAwesomeIcons.code,
@@ -186,6 +190,7 @@ class _ExperienceWidgetState extends State<ExperienceWidget> {
                 launch(widget.experience!.appStoreLink!);
               },
               child: Chip(
+                useDeleteButtonTooltip: false,
                 label: Text("Go to AppStore"),
                 deleteIcon: Icon(
                   FontAwesomeIcons.appStoreIos,
@@ -203,6 +208,7 @@ class _ExperienceWidgetState extends State<ExperienceWidget> {
                 launch(widget.experience!.playStoreLink!);
               },
               child: Chip(
+                useDeleteButtonTooltip: false,
                 label: Text("Go to PlayStore"),
                 deleteIcon: Icon(
                   FontAwesomeIcons.googlePlay,

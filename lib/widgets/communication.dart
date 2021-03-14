@@ -30,6 +30,7 @@ class Communications extends StatelessWidget {
                   title: Text(tCommunications[i].languageName.get(context)),
                   subtitle: Text(tCommunications[i].knowledge.get(context)),
                   leading: CircleAvatar(
+                    radius: 25,
                     backgroundColor: Theme.of(context).accentColor,
                     child: Center(
                       child: Text(

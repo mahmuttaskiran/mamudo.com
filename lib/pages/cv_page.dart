@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:mamudo_com/constants/translations.dart';
 import 'package:mamudo_com/widgets/about_me_widget.dart';
 import 'package:mamudo_com/widgets/communication.dart';
