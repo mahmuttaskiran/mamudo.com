@@ -1,3 +1,0 @@
-Mobil alanda profesyonel bir bilgisayar programcısıyım. Java ve Kotlin ile Android için Native, Flutter ve React-Native ile çapraz-platform uygulamalar geliştiriyorum. Sosyal medya uygulamaları, IoT uygulamaları, sensör uygulamaları, WebRTC uygulamaları geliştirme deneyimim oldu.
-
-Elimden geldiğince kendimi programlama dillerinden soyutlayarak; programlama yeteneklerimi geliştirmeye çalışıyorum. Çünkü tek başına “programlama” bir yetenektir, bu yeteneğimi geliştirdikçe daha iyi düşündüğümü düşünüyorum.
