@@ -60138,7 +60138,7 @@ $R:0,
 $S:0}
 L.B2.prototype={
 H:function(a,b){var s=null
-return M.d8(s,new B.Ez(new G.a2D(new L.Ti(),11,!0,!0,!0),s,C.o,!1,s,!1,s,!1,s,11,C.ao,C.Sa,s,C.aJ,s),C.u,s,s,s,s,50,s,s,s,s,s)}}
+return M.d8(s,new B.Ez(new G.a2D(new L.Ti(),9,!0,!0,!0),s,C.o,!1,s,!1,s,!1,s,9,C.ao,C.Sa,s,C.aJ,s),C.u,s,s,s,s,50,s,s,s,s,s)}}
 L.Ti.prototype={
 $2:function(a,b){var s=null,r=L.bb($.ayn[b],s,s,s,s)
 return new T.c8(C.ER,E.nr(C.h.cq(b,2)===0?K.aq(a).b:K.aq(a).x,s,r,s,!0),s)},
@@ -65910,7 +65910,7 @@ $.R_=null
 $.R6=null
 $.ak8=null
 $.agB=P.x(t.N,t.y)
-$.ayn=H.a(["Java","Kotlin","Flutter","Dart","React-Native","Go","Git","Rust","JavaScript","Html","Css"],t.s)
+$.ayn=H.a(["Java","Kotlin","Flutter","Dart","React-Native","Go","Git","Rust","JavaScript"],t.s)
 $.asn=P.x(t.S,H.W("azr"))
 $.ahx=null
 $.ahv=null

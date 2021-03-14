@@ -8,6 +8,4 @@ var tCoreComponents = <String>[
   "Git",
   "Rust",
   "JavaScript",
-  "Html",
-  "Css",
 ];
