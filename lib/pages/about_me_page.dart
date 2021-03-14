@@ -19,7 +19,12 @@ class AboutMePage extends StatelessWidget {
       appBar: AppBar(
         title: Text(tAboutMeTitle.get(context)),
         actions: <Widget>[
-          GlobalAppStateWidget(padding: const EdgeInsets.only(right: 15),)
+          Padding(
+            padding: const EdgeInsets.only(right: 10.0),
+            child: GlobalAppStateWidget(
+              padding: const EdgeInsets.only(right: 15),
+            ),
+          )
         ],
       ),
     );

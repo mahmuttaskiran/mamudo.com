@@ -17,7 +17,12 @@ class _BlogsPageState extends State<BlogsPage> {
         title: Text(tBlogsTitle.get(context)),
         centerTitle: true,
         actions: [
-          GlobalAppStateWidget(padding: const EdgeInsets.only(right: 15),)
+          Padding(
+            padding: const EdgeInsets.only(right: 10.0),
+            child: GlobalAppStateWidget(
+              padding: const EdgeInsets.only(right: 15),
+            ),
+          )
         ],
       ),
       body: Center(

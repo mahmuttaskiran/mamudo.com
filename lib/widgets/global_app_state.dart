@@ -11,38 +11,34 @@ class GlobalAppStateWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final textStyle = TextStyle(color: Colors.black);
-    return Padding(
-      padding: padding,
-      child: Container(
-        width: MediaQuery.of(context).size.width > 500 ? 500 : double.infinity,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.end,
-          mainAxisSize: MainAxisSize.min,
-          children: <Widget>[
-            TextButton(
-              onPressed: () {
-                GlobalAppState().locale = GlobalAppState().opponentLocale;
-              },
-              child: Text(
-                GlobalAppState().opponentLocaleName,
-                style: Theme.of(context).brightness == Brightness.light
-                    ? textStyle
-                    : null,
-              ),
+    return Container(
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.end,
+        mainAxisSize: MainAxisSize.min,
+        children: <Widget>[
+          TextButton(
+            onPressed: () {
+              GlobalAppState().locale = GlobalAppState().opponentLocale;
+            },
+            child: Text(
+              GlobalAppState().opponentLocaleName,
+              style: Theme.of(context).brightness == Brightness.light
+                  ? textStyle
+                  : null,
             ),
-            OutlinedButton(
-              onPressed: () {
-                GlobalAppState().themeMode = GlobalAppState().opponentThemeMode;
-              },
-              child: Text(
-                GlobalAppState().opponentThemeModeString,
-                style: Theme.of(context).brightness == Brightness.light
-                    ? textStyle
-                    : null,
-              ),
-            )
-          ],
-        ),
+          ),
+          OutlinedButton(
+            onPressed: () {
+              GlobalAppState().themeMode = GlobalAppState().opponentThemeMode;
+            },
+            child: Text(
+              GlobalAppState().opponentThemeModeString,
+              style: Theme.of(context).brightness == Brightness.light
+                  ? textStyle
+                  : null,
+            ),
+          )
+        ],
       ),
     );
   }

@@ -29,15 +29,15 @@ class SocialLinks extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
       child: Container(
         height: 50,
         child: Row(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            for (final s in socialLinks) Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 10),
-                child: SocialLinkWidget(social: s)),
+            for (final s in socialLinks)
+              Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 10),
+                  child: SocialLinkWidget(social: s)),
           ],
         ),
       ),

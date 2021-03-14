@@ -27,7 +27,7 @@ class _HomePageState extends State<HomePage> {
             children: <Widget>[
               FixedContainer(child: GlobalAppStateWidget()),
               FixedCard(child: ProfileWidget()),
-              FixedCard(child: SocialLinks()),
+              FixedCard(child: Center(child: SocialLinks())),
             ],
           ),
         ),

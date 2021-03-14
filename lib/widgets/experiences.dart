@@ -74,8 +74,11 @@ class ExperiencesPage extends StatelessWidget {
       appBar: AppBar(
         title: Text(tExperiencesTitle.get(context)),
         actions: [
-          GlobalAppStateWidget(
-            padding: const EdgeInsets.only(right: 15),
+          Padding(
+            padding: const EdgeInsets.only(right: 10.0),
+            child: GlobalAppStateWidget(
+              padding: const EdgeInsets.only(right: 15),
+            ),
           )
         ],
       ),
