@@ -49,20 +49,17 @@ class Experiences extends StatelessWidget {
             )
         ],
         if (!showAll)
-          Container(
-            color: Theme.of(context).brightness == Brightness.dark
-                ? Colors.grey[900]
-                : Colors.grey[300],
-            child: ListTile(
-              title: Text(tSeeAll.get(context)),
-              leading: CircleAvatar(
-                backgroundColor: Theme.of(context).primaryColor,
-                child: Icon(FontAwesomeIcons.handPointer),
-              ),
-              onTap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (_) => ExperiencesPage()));
-              },
+          InkWell(
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return ExperiencesPage();
+              }));
+            },
+            child: Container(
+              height: 40,
+              width: double.infinity,
+              color: Theme.of(context).accentColor,
+              child: Center(child: Text(tSeeAll.get(context))),
             ),
           ),
       ],
@@ -77,7 +74,9 @@ class ExperiencesPage extends StatelessWidget {
       appBar: AppBar(
         title: Text(tExperiencesTitle.get(context)),
         actions: [
-          GlobalAppStateWidget(padding: const EdgeInsets.only(right: 15),)
+          GlobalAppStateWidget(
+            padding: const EdgeInsets.only(right: 15),
+          )
         ],
       ),
       body: Center(
@@ -148,7 +147,8 @@ class _ExperienceWidgetState extends State<ExperienceWidget> {
         Chip(
           label: Text(
               widget.experience!.type == ExperienceType.professionalExperience
-                  ? tProfessionalExperience.get(context): tSelfExperience.get(context)),
+                  ? tProfessionalExperience.get(context)
+                  : tSelfExperience.get(context)),
           backgroundColor: positionBackgroundColor,
         ),
         if (widget.experience!.position != null)
