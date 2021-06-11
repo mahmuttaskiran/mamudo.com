@@ -4,26 +4,26 @@ const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 const RESOURCES = {
   "version.json": "eb5e86f55c09f3b98c660fff63f65eef",
-"index.html": "602aa933fc7c66179d76c5425897e62b",
-"/": "602aa933fc7c66179d76c5425897e62b",
-"main.dart.js": "06a5e1b5ca5150ca9808abe0cca3d3da",
+"index.html": "134187848aebb13becfbcaa85d28b593",
+"/": "134187848aebb13becfbcaa85d28b593",
+"main.dart.js": "a9429039541b601a83a76e2d82162e93",
 "mahmuttaskiran_en.pages": "f7b39379ab390ce46a026cbf3ff04492",
 "favicon.png": "1204d469df2daf2943f170e70e101660",
 "icons/Icon-192.png": "ac9a721a12bbc803b44f645561ecb1e1",
 "icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
-"loading.css": "0fc77b236a1cc4bf29d7ce0da8597510",
+"loading.css": "8045f4afcceafb8b960a4a2e77860b5c",
 "manifest.json": "ff4a522dba6d945bfd150edef1b601af",
 "mahmuttaskiran_tr.pdf": "b82003522719bf8d5b471c844f8bab2d",
 "assets/AssetManifest.json": "3b02174b2d6d6ec71e085846436c30e0",
-"assets/NOTICES": "a6c1443ecfacd87917bfa1a4ed6d471e",
+"assets/NOTICES": "d99ef86e4cff58f10a0afea5605b58c6",
 "assets/FontManifest.json": "3ddd9b2ab1c2ae162d46e3cc7b78ba88",
 "assets/packages/font_awesome_flutter/lib/fonts/fa-solid-900.ttf": "d80ca32233940ebadc5ae5372ccd67f9",
 "assets/packages/font_awesome_flutter/lib/fonts/fa-regular-400.ttf": "a126c025bab9a1b4d8ac5534af76a208",
 "assets/packages/font_awesome_flutter/lib/fonts/fa-brands-400.ttf": "831eb40a2d76095849ba4aecd4340f19",
-"assets/fonts/MaterialIcons-Regular.otf": "1288c9e28052e028aba623321f7826ac",
+"assets/fonts/MaterialIcons-Regular.otf": "4e6447691c9509f7acdbf8a931a85ca1",
 "assets/assets/about_tr.txt": "b96e976eb045057ee96bbed8d0c0c084",
 "assets/assets/images/blueoperation.webp": "f765522733e9fcc8f57da8e1afdbfd4b",
-"assets/assets/images/profile_0.jpeg": "bc9ce790d7d76de0eb609434156d1978",
+"assets/assets/images/profile_0.jpeg": "bf95206e1e8389319aa42dc08ee67062",
 "assets/assets/images/polyingo.png": "779aaf4f5e9101d10a38d146a379e16a",
 "assets/assets/about_en.txt": "45d3f50ffcc672a82d2bd30274b3f0ec",
 "assets/assets/localizations/tr.json": "6abb7c8aa5592caf5c2b12147592ce26",
@@ -47,7 +47,7 @@ self.addEventListener("install", (event) => {
   return event.waitUntil(
     caches.open(TEMP).then((cache) => {
       return cache.addAll(
-        CORE.map((value) => new Request(value + '?revision=' + RESOURCES[value], {'cache': 'reload'})));
+        CORE.map((value) => new Request(value, {'cache': 'reload'})));
     })
   );
 });

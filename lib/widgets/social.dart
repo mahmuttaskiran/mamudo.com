@@ -21,7 +21,7 @@ const socialLinks = [
   SocialLink(
       FontAwesomeIcons.youtubeSquare,
       "YouTube",
-      "https://www.youtube.com/channel/UCqtwGBGisBLNE7WK-V7esUg?view_as=subscriber",
+      "https://www.youtube.com/channel/UCqtwGBGisBLNE7WK-V7esUg/playlists",
       Colors.red),
 ];
 
