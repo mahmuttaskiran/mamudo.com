@@ -34,8 +34,8 @@ final tSeeAll = LanguageSensitiveString.enTr("See all..", "Hepsini gör...");
 final tOpenSource = LanguageSensitiveString.enTr("Open source", "Açık kaynak");
 final tSelfExperience =
     LanguageSensitiveString.enTr("Self experience", "Kişisel proje");
-final tProfessionalExperience = LanguageSensitiveString.enTr(
-    "Professional Experience", "Profesyonel deneyim");
+final tProfessionalExperience =
+    LanguageSensitiveString.enTr("Full time", "Tam zamanlı");
 
 final tEducationTitle = LanguageSensitiveString.enTr("Education", "Eğitim");
 final tCommunicationsTitle =

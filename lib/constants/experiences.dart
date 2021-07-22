@@ -3,17 +3,29 @@ import 'package:mamudo_com/models/sensitive_string.dart';
 
 var tExperiences = [
   Experience(
+      title: LanguageSensitiveString.enTr("OBSS", "OBSS"),
+      description: LanguageSensitiveString.enTr(
+          "Akbank via OBSS", "OBSS aracılığıyla Akbank"),
+      position: LanguageSensitiveString.enTr(
+          "Seniour Consultant", "Seniour Consultant"),
+      type: ExperienceType.professionalExperience,
+      start: DateTime(2021, 6),
+      company: LanguageSensitiveString.en("OBSS | Akbank"),
+      secondaryLink: "https://obss.com.tr/"),
+  Experience(
       title: LanguageSensitiveString.enTr(
         "Path - Digital Experiences",
         "Path - Digital Experiences",
       ),
-      description: LanguageSensitiveString.enTr("path.com.tr", "path.com.tr"),
+      description: LanguageSensitiveString.enTr(
+          "Tuttur via Path", "Path aracılığıyla Tuttur.com"),
       position: LanguageSensitiveString.enTr(
         "Android Developer",
         "Android Geliştiricisi",
       ),
       type: ExperienceType.professionalExperience,
       start: DateTime(2021, 1),
+      end: DateTime(2021, 6),
       company: LanguageSensitiveString.en("Path - Digital Experiences"),
       secondaryLink: "https://www.path.com.tr"),
   Experience(
