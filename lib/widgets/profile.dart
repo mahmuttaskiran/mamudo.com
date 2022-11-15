@@ -50,6 +50,8 @@ class ProfileWidget extends StatelessWidget {
             ),
           ),
           if (showActions) SizedBox(height: 15),
+          if (showActions) Divider(),
+          if (showActions) SizedBox(height: 4),
           if (showActions)
             Container(
               height: 30,

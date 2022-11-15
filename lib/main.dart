@@ -30,7 +30,7 @@ class _MyAppState extends State<MyApp> {
       title: tName.getEnOrTrValue(),
       darkTheme: ThemeData(
         colorScheme: darkColorScheme,
-        useMaterial3: false
+        useMaterial3: true
       ),
       theme: ThemeData(
         colorScheme: lightColorScheme,
