@@ -3,10 +3,11 @@ const MANIFEST = 'flutter-app-manifest';
 const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 const RESOURCES = {
-  "version.json": "e53e863d7c9992d4ea29eb498aa5eb70",
-"index.html": "bcaddb490ad62e5c569e6f4f70e2b31d",
-"/": "bcaddb490ad62e5c569e6f4f70e2b31d",
-"main.dart.js": "996729f0023d6121845d7afc057e33c8",
+  "version.json": "568d56b09f9795dd12c27aeb041db878",
+"index.html": "581c96a79e65b80f7273b3d847a7d5f3",
+"/": "581c96a79e65b80f7273b3d847a7d5f3",
+"main.dart.js": "0268b363a56460f57830408b923955b1",
+"flutter.js": "f85e6fb278b0fd20c349186fb46ae36d",
 "favicon.png": "1204d469df2daf2943f170e70e101660",
 "cv.pages": "0fb7d045eb44efa9f4da6fb9ead0f02a",
 "icons/Icon-192.png": "ac9a721a12bbc803b44f645561ecb1e1",
@@ -15,12 +16,13 @@ const RESOURCES = {
 "manifest.json": "ff4a522dba6d945bfd150edef1b601af",
 "mahmuttaskiran_tr.pdf": "b82003522719bf8d5b471c844f8bab2d",
 "assets/AssetManifest.json": "3b02174b2d6d6ec71e085846436c30e0",
-"assets/NOTICES": "9c68af80e2069fe63f20575f94d8e539",
+"assets/NOTICES": "d8444e1e2290f26a4c41842a2ab199ec",
 "assets/FontManifest.json": "3ddd9b2ab1c2ae162d46e3cc7b78ba88",
-"assets/packages/font_awesome_flutter/lib/fonts/fa-solid-900.ttf": "d80ca32233940ebadc5ae5372ccd67f9",
-"assets/packages/font_awesome_flutter/lib/fonts/fa-regular-400.ttf": "a126c025bab9a1b4d8ac5534af76a208",
-"assets/packages/font_awesome_flutter/lib/fonts/fa-brands-400.ttf": "831eb40a2d76095849ba4aecd4340f19",
-"assets/fonts/MaterialIcons-Regular.otf": "7e7a6cccddf6d7b20012a548461d5d81",
+"assets/packages/font_awesome_flutter/lib/fonts/fa-solid-900.ttf": "26f5af2d93473531f82ef5060f9c6d45",
+"assets/packages/font_awesome_flutter/lib/fonts/fa-regular-400.ttf": "1f7cb220b3f5309130bd6d9ad87e0fc0",
+"assets/packages/font_awesome_flutter/lib/fonts/fa-brands-400.ttf": "4e20cb87b0d43808c49449ffd69b1a74",
+"assets/shaders/ink_sparkle.frag": "dfd83b43e89dbc8d2ab3155207763fe4",
+"assets/fonts/MaterialIcons-Regular.otf": "95db9098c58fd6db106f1116bae85a0b",
 "assets/assets/about_tr.txt": "b96e976eb045057ee96bbed8d0c0c084",
 "assets/assets/images/blueoperation.webp": "f765522733e9fcc8f57da8e1afdbfd4b",
 "assets/assets/images/profile_0.jpeg": "bf95206e1e8389319aa42dc08ee67062",
@@ -30,19 +32,17 @@ const RESOURCES = {
 "assets/assets/localizations/en.json": "d957745e9b8fd4ef41b30c33964e4b8c",
 "mahmuttaskiran_tr.pages": "c87e3c6ade693ba44465d54b0b3086bb",
 "cv.pdf": "0abdf82d7e86188f8c9f1404710930dc",
-"canvaskit/canvaskit.js": "c2b4e5f3d7a3d82aed024e7249a78487",
-"canvaskit/profiling/canvaskit.js": "ae2949af4efc61d28a4a80fffa1db900",
-"canvaskit/profiling/canvaskit.wasm": "95e736ab31147d1b2c7b25f11d4c32cd",
-"canvaskit/canvaskit.wasm": "4b83d89d9fecbea8ca46f2f760c5a9ba"
+"canvaskit/canvaskit.js": "2bc454a691c631b07a9307ac4ca47797",
+"canvaskit/profiling/canvaskit.js": "38164e5a72bdad0faa4ce740c9b8e564",
+"canvaskit/profiling/canvaskit.wasm": "95a45378b69e77af5ed2bc72b2209b94",
+"canvaskit/canvaskit.wasm": "bf50631470eb967688cca13ee181af62"
 };
 
 // The application shell files that are downloaded before a service worker can
 // start.
 const CORE = [
-  "/",
-"main.dart.js",
+  "main.dart.js",
 "index.html",
-"assets/NOTICES",
 "assets/AssetManifest.json",
 "assets/FontManifest.json"];
 // During install, the TEMP cache is populated with the application shell files.
@@ -141,9 +141,11 @@ self.addEventListener("fetch", (event) => {
     .then((cache) =>  {
       return cache.match(event.request).then((response) => {
         // Either respond with the cached resource, or perform a fetch and
-        // lazily populate the cache.
+        // lazily populate the cache only if the resource was successfully fetched.
         return response || fetch(event.request).then((response) => {
-          cache.put(event.request, response.clone());
+          if (response && Boolean(response.ok)) {
+            cache.put(event.request, response.clone());
+          }
           return response;
         });
       })
