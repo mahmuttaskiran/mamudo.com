@@ -23,7 +23,6 @@ class CardTitle extends StatelessWidget {
       child: Center(child: Text(title!)),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
-        color: Theme.of(context).primaryColor,
       ),
     );
   }
@@ -58,7 +57,6 @@ class Experiences extends StatelessWidget {
             child: Container(
               height: 40,
               width: double.infinity,
-              color: Theme.of(context).accentColor,
               child: Center(child: Text(tSeeAll.get(context))),
             ),
           ),
@@ -112,23 +110,29 @@ class _ExperienceWidgetState extends State<ExperienceWidget> {
       children: <Widget>[
         SizedBox(height: 10),
         ListTile(
-          leading: CircleAvatar(
-            radius: 25,
-            child: Text(
-              dateStr,
-              style: TextStyle(fontSize: 12),
-              textAlign: TextAlign.center,
+          trailing: Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(20),
+              color: Theme.of(context).colorScheme.secondary,
             ),
-            backgroundColor: Theme.of(context).accentColor,
+
+            child: Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Text(
+                dateStr,
+                style: TextStyle(fontSize: 11),
+                textAlign: TextAlign.center,
+              ),
+            ),
           ),
           title: Text(widget.experience!.title!.get(context)),
           subtitle: Text(widget.experience!.description!.get(context)),
-          trailing: trailing,
+          leading: trailing,
         ),
         Align(
           alignment: Alignment.centerLeft,
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 8.0),
+            padding: const EdgeInsets.symmetric(horizontal: 15.0),
             child: chips,
           ),
         ),
@@ -139,7 +143,6 @@ class _ExperienceWidgetState extends State<ExperienceWidget> {
   }
 
   Wrap get chips {
-    final positionBackgroundColor = Theme.of(context).primaryColor;
     return Wrap(
       alignment: WrapAlignment.start,
       crossAxisAlignment: WrapCrossAlignment.end,
@@ -148,32 +151,25 @@ class _ExperienceWidgetState extends State<ExperienceWidget> {
       runSpacing: 5,
       children: <Widget>[
         Chip(
-          useDeleteButtonTooltip: false,
           label: Text(
               widget.experience!.type == ExperienceType.professionalExperience
                   ? tProfessionalExperience.get(context)
                   : tSelfExperience.get(context)),
-          backgroundColor: positionBackgroundColor,
         ),
         if (widget.experience!.position != null)
           Chip(
-            useDeleteButtonTooltip: false,
             label: Text(widget.experience!.position!.get(context)),
-            backgroundColor: positionBackgroundColor,
           ),
         if (widget.experience!.location != null)
           Chip(
-            useDeleteButtonTooltip: false,
             label: Text(widget.experience!.location!.get(context)),
-            backgroundColor: positionBackgroundColor,
           ),
         if (widget.experience!.isOpenSource)
           GestureDetector(
             onTap: () {
-              launch(widget.experience!.secondaryLink!);
+              launchUrl(Uri.parse(widget.experience!.secondaryLink!));
             },
             child: Chip(
-              useDeleteButtonTooltip: false,
               label: Text(tOpenSource.get(context)),
               deleteIcon: Icon(
                 FontAwesomeIcons.code,
@@ -187,10 +183,9 @@ class _ExperienceWidgetState extends State<ExperienceWidget> {
             message: "Go to AppStore",
             child: GestureDetector(
               onTap: () {
-                launch(widget.experience!.appStoreLink!);
+                launchUrl(Uri.parse(widget.experience!.appStoreLink!));
               },
               child: Chip(
-                useDeleteButtonTooltip: false,
                 label: Text("Go to AppStore"),
                 deleteIcon: Icon(
                   FontAwesomeIcons.appStoreIos,
@@ -205,10 +200,9 @@ class _ExperienceWidgetState extends State<ExperienceWidget> {
             message: "Go to PlayStore",
             child: GestureDetector(
               onTap: () {
-                launch(widget.experience!.playStoreLink!);
+                launchUrl(Uri.parse(widget.experience!.playStoreLink!));
               },
               child: Chip(
-                useDeleteButtonTooltip: false,
                 label: Text("Go to PlayStore"),
                 deleteIcon: Icon(
                   FontAwesomeIcons.googlePlay,
@@ -237,7 +231,7 @@ class _ExperienceWidgetState extends State<ExperienceWidget> {
         message: widget.experience!.secondaryLink!,
         child: GestureDetector(
           onTap: () {
-            launch(widget.experience!.secondaryLink!);
+            launchUrl(Uri.parse(widget.experience!.secondaryLink!));
           },
           child: CircleAvatar(
             child: Icon(FontAwesomeIcons.github),
@@ -249,7 +243,7 @@ class _ExperienceWidgetState extends State<ExperienceWidget> {
         message: widget.experience!.secondaryLink!,
         child: GestureDetector(
           onTap: () {
-            launch(widget.experience!.secondaryLink!);
+            launchUrl(Uri.parse(widget.experience!.secondaryLink!));
           },
           child: ClipOval(
             child: Image.asset(

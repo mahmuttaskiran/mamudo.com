@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:mamudo_com/constants/translations.dart';
@@ -38,12 +36,10 @@ class ProfileWidget extends StatelessWidget {
           SizedBox(height: 10),
           SizedBox(
             height: 20,
-            child: FadeAnimatedTextKit(
-              text: tProfessions.map((e) => e.get(context)).toList(),
-              totalRepeatCount: 10000,
-              isRepeatingAnimation: true,
-              textStyle: Theme.of(context).textTheme.subtitle2!,
-              textAlign: TextAlign.start,
+            child: AnimatedTextKit(animatedTexts:
+              tProfessions.map((e) => FadeAnimatedText(
+                e.get(context),
+              )).toList(),
             ),
           ),
           Padding(

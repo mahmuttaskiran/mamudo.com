@@ -7,7 +7,7 @@ class GlobalAppState {
 
   factory GlobalAppState() => instance;
   Locale _appLocale = Locale("en");
-  ThemeMode _themeMode = ThemeMode.dark;
+  ThemeMode _themeMode = ThemeMode.light;
 
   Function? appStateListener;
 

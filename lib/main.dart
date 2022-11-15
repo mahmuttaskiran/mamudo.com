@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:mamudo_com/app_state.dart';
+import 'package:mamudo_com/color_schemes.dart';
 import 'package:mamudo_com/constants/translations.dart';
 import 'package:mamudo_com/pages/about_me_page.dart';
 import 'package:mamudo_com/pages/blogs_page.dart';
 import 'package:mamudo_com/pages/cv_page.dart';
 import 'package:mamudo_com/pages/home.dart';
 
-void main() {
-  runApp(MyApp());
-}
+void main() => runApp(MyApp());
 
 class MyApp extends StatefulWidget {
   @override
@@ -29,16 +28,13 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: tName.getEnOrTrValue(),
-      theme: ThemeData(
-        primarySwatch: Colors.lightBlue,
-        accentColor: Colors.grey,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
       darkTheme: ThemeData(
-        brightness: Brightness.dark,
-        primarySwatch: Colors.blueGrey,
-        accentColor: Colors.lightBlueAccent,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
+        colorScheme: darkColorScheme,
+        useMaterial3: false
+      ),
+      theme: ThemeData(
+        colorScheme: lightColorScheme,
+        useMaterial3: true,
       ),
       routes: {
         "/": (_) => HomePage(),

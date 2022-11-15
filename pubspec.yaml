@@ -3,20 +3,20 @@ description: Mahmut Taskiran's personal web site.
 
 publish_to: 'none'
 
-version: 2.0.1+1
+version: 2.0.1+2
 
 environment:
-  sdk: '>=2.12.0 <3.0.0'
+  sdk: ">=2.17.0 <3.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
-  animated_text_kit: ^4.0.0
-  font_awesome_flutter: ^9.0.0-nullsafety
-  url_launcher: ^6.0.0-nullsafety.7
-  intl: ^0.17.0-nullsafety.2
+  animated_text_kit: ^4.2.2
+  font_awesome_flutter: ^10.2.1
+  url_launcher: ^6.1.6
+  intl: ^0.17.0
 
 dev_dependencies:
   flutter_test:

@@ -31,7 +31,6 @@ class Communications extends StatelessWidget {
                   subtitle: Text(tCommunications[i].knowledge.get(context)),
                   leading: CircleAvatar(
                     radius: 25,
-                    backgroundColor: Theme.of(context).accentColor,
                     child: Center(
                       child: Text(
                           tCommunications[i].locale.languageCode.toUpperCase()),

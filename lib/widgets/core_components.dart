@@ -15,8 +15,8 @@ class CoreComponents extends StatelessWidget {
             child: Chip(
               label: Text(tCoreComponents[index]),
               backgroundColor: index % 2 == 0
-                  ? Theme.of(context).primaryColor
-                  : Theme.of(context).accentColor,
+                  ? Theme.of(context).colorScheme.secondary
+                  : null,
             ),
           );
         },

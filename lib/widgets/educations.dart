@@ -33,9 +33,8 @@ class Educations extends StatelessWidget {
                     ),
                     leading: CircleAvatar(
                       radius: 25,
-                      backgroundColor: Theme.of(context).accentColor,
                       child: Icon(
-                        FontAwesomeIcons.university,
+                        FontAwesomeIcons.buildingColumns,
                         size: 18,
                       ),
                     ),

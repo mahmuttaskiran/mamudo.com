@@ -22,15 +22,14 @@ class BlogsWidget extends StatelessWidget {
                 contentPadding: const EdgeInsets.all(15),
                 title: Text(f.title.get(context)),
                 onTap: () {
-                  launch(f.link!);
+                  launchUrl(Uri.parse(f.link!));
                 },
                 subtitle: Text(
                   f.content.get(context),
                   maxLines: 2,
                 ),
                 leading: CircleAvatar(
-                  backgroundColor: Theme.of(context).accentColor,
-                  child: Icon(FontAwesomeIcons.mediumM),
+                  child: Icon(FontAwesomeIcons.medium),
                 ),
               ),
             ],
@@ -39,13 +38,9 @@ class BlogsWidget extends StatelessWidget {
           showAll
               ? SizedBox.shrink()
               : Container(
-                  color: Theme.of(context).brightness == Brightness.dark
-                      ? Colors.grey[900]
-                      : Colors.grey[300],
                   child: ListTile(
                     title: Text(tSeeAll.get(context)),
                     leading: CircleAvatar(
-                      backgroundColor: Theme.of(context).primaryColor,
                       child: Icon(FontAwesomeIcons.handPointer),
                     ),
                     onTap: () {
