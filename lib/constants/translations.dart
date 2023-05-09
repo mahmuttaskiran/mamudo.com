@@ -6,8 +6,7 @@ final tContactText = LanguageSensitiveString.enTr(
 );
 
 final tProfessions = [
-  LanguageSensitiveString.enTr(
-      "Mobile Application Developer", "Mobil Uygulama Geliştiricisi"),
+  LanguageSensitiveString.enTr("Mobile Application Developer", "Mobil Uygulama Geliştiricisi"),
   LanguageSensitiveString.enTr("Thinker", "Düşünen adam"),
   LanguageSensitiveString.enTr("Runner", "Koşan adam"),
   LanguageSensitiveString.enTr("Blogger", "Yazan adam"),
@@ -28,24 +27,19 @@ final tName = LanguageSensitiveString.enTr(
   "Mahmut Taşkıran",
 );
 
-final tExperiencesTitle =
-    LanguageSensitiveString.enTr("Experiences", "Deneyimler");
+final tExperiencesTitle = LanguageSensitiveString.enTr("Experiences", "Deneyimler");
 final tSeeAll = LanguageSensitiveString.enTr("See all..", "Hepsini gör...");
 final tOpenSource = LanguageSensitiveString.enTr("Open source", "Açık kaynak");
-final tSelfExperience =
-    LanguageSensitiveString.enTr("Self experience", "Kişisel proje");
-final tProfessionalExperience =
-    LanguageSensitiveString.enTr("Full time", "Tam zamanlı");
+final tSelfExperience = LanguageSensitiveString.enTr("Self experience", "Kişisel proje");
+final tProfessionalExperience = LanguageSensitiveString.enTr("Full time", "Tam zamanlı");
 
 final tEducationTitle = LanguageSensitiveString.enTr("Education", "Eğitim");
-final tCommunicationsTitle =
-    LanguageSensitiveString.enTr("Communucation", "İletişim");
+final tCommunicationsTitle = LanguageSensitiveString.enTr("Communucation", "İletişim");
 final tBlogsTitle = LanguageSensitiveString.enTr("Blogs", "Blog yazıları");
 
 final tCvBtn = LanguageSensitiveString.enTr("Resume", "Özgeçmiş");
 
-final tAbout =
-    LanguageSensitiveString.enTr("assets/about_en.txt", "assets/about_tr.txt");
+final tAbout = LanguageSensitiveString.enTr("assets/about_en.txt", "assets/about_tr.txt");
 
 final tAboutMeBtn = LanguageSensitiveString.enTr("About me...", "Hakkımda...");
 final tAboutMeTitle = LanguageSensitiveString.enTr("About me", "Hakkımda");

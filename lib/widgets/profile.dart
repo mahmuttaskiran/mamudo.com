@@ -30,16 +30,21 @@ class ProfileWidget extends StatelessWidget {
         mainAxisSize: MainAxisSize.max,
         children: <Widget>[
           SizedBox(height: 15),
-          ProfileImageWithPlaceholder(width: 100,height: 100,),
+          ProfileImageWithPlaceholder(
+            width: 100,
+            height: 100,
+          ),
           SizedBox(height: 10),
           Text(tName.get(context), style: Theme.of(context).textTheme.headline5),
           SizedBox(height: 10),
           SizedBox(
             height: 20,
-            child: AnimatedTextKit(animatedTexts:
-              tProfessions.map((e) => FadeAnimatedText(
-                e.get(context),
-              )).toList(),
+            child: AnimatedTextKit(
+              animatedTexts: tProfessions
+                  .map((e) => FadeAnimatedText(
+                        e.get(context),
+                      ))
+                  .toList(),
             ),
           ),
           Padding(
@@ -105,12 +110,17 @@ class ProfileImageWithPlaceholder extends StatelessWidget {
     return Stack(
       alignment: Alignment.center,
       children: [
-        ClipOval(child: Container(width: width,height: height, color: Colors.red,)),
+        ClipOval(
+            child: Container(
+          width: width,
+          height: height,
+          color: Colors.red,
+        )),
         ClipOval(
           child: Image.asset(
             "assets/images/profile_0.jpeg",
-            width: width -2,
-            height: height -2,
+            width: width - 2,
+            height: height - 2,
             fit: BoxFit.cover,
           ),
         ),
@@ -118,4 +128,3 @@ class ProfileImageWithPlaceholder extends StatelessWidget {
     );
   }
 }
-

@@ -28,10 +28,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: tName.getEnOrTrValue(),
-      darkTheme: ThemeData(
-        colorScheme: darkColorScheme,
-        useMaterial3: true
-      ),
+      darkTheme: ThemeData(colorScheme: darkColorScheme, useMaterial3: true),
       theme: ThemeData(
         colorScheme: lightColorScheme,
         useMaterial3: true,

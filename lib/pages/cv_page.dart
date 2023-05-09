@@ -38,8 +38,7 @@ class _CVPageState extends State<CVPage> {
               FixedCard(child: ProfileWidget(showActions: false)),
               FixedCard(
                 child: Padding(
-                  padding:
-                      const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+                  padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
                   child: AboutWidget(),
                 ),
               ),

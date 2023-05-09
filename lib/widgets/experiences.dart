@@ -115,7 +115,6 @@ class _ExperienceWidgetState extends State<ExperienceWidget> {
               borderRadius: BorderRadius.circular(20),
               color: Theme.of(context).colorScheme.secondary,
             ),
-
             child: Padding(
               padding: const EdgeInsets.all(10.0),
               child: Text(
@@ -151,10 +150,9 @@ class _ExperienceWidgetState extends State<ExperienceWidget> {
       runSpacing: 5,
       children: <Widget>[
         Chip(
-          label: Text(
-              widget.experience!.type == ExperienceType.professionalExperience
-                  ? tProfessionalExperience.get(context)
-                  : tSelfExperience.get(context)),
+          label: Text(widget.experience!.type == ExperienceType.professionalExperience
+              ? tProfessionalExperience.get(context)
+              : tSelfExperience.get(context)),
         ),
         if (widget.experience!.position != null)
           Chip(

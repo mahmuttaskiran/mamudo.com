@@ -21,9 +21,7 @@ class GlobalAppStateWidget extends StatelessWidget {
             },
             child: Text(
               GlobalAppState().opponentLocaleName,
-              style: Theme.of(context).brightness == Brightness.light
-                  ? textStyle
-                  : null,
+              style: Theme.of(context).brightness == Brightness.light ? textStyle : null,
             ),
           ),
           OutlinedButton(
@@ -32,9 +30,7 @@ class GlobalAppStateWidget extends StatelessWidget {
             },
             child: Text(
               GlobalAppState().opponentThemeModeString,
-              style: Theme.of(context).brightness == Brightness.light
-                  ? textStyle
-                  : null,
+              style: Theme.of(context).brightness == Brightness.light ? textStyle : null,
             ),
           )
         ],

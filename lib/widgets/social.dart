@@ -12,17 +12,11 @@ class SocialLink {
 }
 
 const socialLinks = [
-  SocialLink(FontAwesomeIcons.github, "Github",
-      "https://github.com/mahmuttaskiran", Colors.grey),
-  SocialLink(FontAwesomeIcons.medium, "Medium",
-      "https://medium.com/@taskiranmahmut", Colors.orangeAccent),
-  SocialLink(FontAwesomeIcons.linkedin, "LinkedIn",
-      "https://www.linkedin.com/in/mahmutaskiran/", Colors.blue),
-  SocialLink(
-      FontAwesomeIcons.youtubeSquare,
-      "YouTube",
-      "https://www.youtube.com/channel/UCqtwGBGisBLNE7WK-V7esUg/playlists",
-      Colors.red),
+  SocialLink(FontAwesomeIcons.github, "Github", "https://github.com/mahmuttaskiran", Colors.grey),
+  SocialLink(FontAwesomeIcons.medium, "Medium", "https://medium.com/@taskiranmahmut", Colors.orangeAccent),
+  SocialLink(FontAwesomeIcons.linkedin, "LinkedIn", "https://www.linkedin.com/in/mahmutaskiran/", Colors.blue),
+  SocialLink(FontAwesomeIcons.youtubeSquare, "YouTube",
+      "https://www.youtube.com/channel/UCqtwGBGisBLNE7WK-V7esUg/playlists", Colors.red),
 ];
 
 class SocialLinks extends StatelessWidget {
@@ -35,9 +29,7 @@ class SocialLinks extends StatelessWidget {
         child: Row(
           children: <Widget>[
             for (final s in socialLinks)
-              Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 10),
-                  child: SocialLinkWidget(social: s)),
+              Padding(padding: const EdgeInsets.symmetric(horizontal: 10), child: SocialLinkWidget(social: s)),
           ],
         ),
       ),

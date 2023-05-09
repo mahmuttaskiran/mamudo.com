@@ -26,9 +26,7 @@ class Educations extends StatelessWidget {
                     title: Text(tEducations[i].university!.get(context)),
                     subtitle: Text(tEducations[i].department!.get(context)),
                     trailing: Text(
-                      tEducations[i].degree!.get(context) +
-                          "\n" +
-                          getTime(tEducations[i]),
+                      tEducations[i].degree!.get(context) + "\n" + getTime(tEducations[i]),
                       textAlign: TextAlign.end,
                     ),
                     leading: CircleAvatar(

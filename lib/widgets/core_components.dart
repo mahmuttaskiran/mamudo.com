@@ -14,9 +14,7 @@ class CoreComponents extends StatelessWidget {
             padding: const EdgeInsets.only(left: 8.0),
             child: Chip(
               label: Text(tCoreComponents[index]),
-              backgroundColor: index % 2 == 0
-                  ? Theme.of(context).colorScheme.secondary
-                  : null,
+              backgroundColor: index % 2 == 0 ? Theme.of(context).colorScheme.secondary : null,
             ),
           );
         },
