@@ -28,7 +28,8 @@ class _HomePageState extends State<HomePage> {
               FixedContainer(child: GlobalAppStateWidget()),
               FixedCard(child: ProfileWidget()),
               FixedCard(child: Center(child: SocialLinks())),
-              Text("Made with Flutter ♥ for fun", style: Theme.of(context).textTheme.caption)
+              Text("Made with Flutter ♥ for fun",
+                  style: Theme.of(context).textTheme.bodySmall)
             ],
           ),
         ),
