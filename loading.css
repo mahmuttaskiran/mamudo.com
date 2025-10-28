@@ -1,0 +1,81 @@
+body {
+    background: #282828;
+    margin: 0; /* Remove default margin */
+    overflow: hidden; /* Prevent scrollbars */
+}
+
+#container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+#textContainer {
+    color: #6f6f6f;
+    font-size: x-small;
+    font-family: "Arial Black", "Arial Bold", Gadget, sans-serif;
+}
+
+svg {
+    display: block; /* Prevent whitespace below SVG */
+}
+
+.stroke-still {
+    stroke: #232323;
+}
+
+.stroke-animation {
+    animation: stroke-spacing 1.2s ease-in, stroke-color 4.8s linear;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+    animation-play-state: running;
+    transform-origin: center center;
+}
+
+@keyframes stroke-spacing {
+    0% {
+        stroke-dasharray: 0 200;
+    }
+    45% {
+        stroke-dashoffset: 0;
+        stroke-dasharray: 200 200;
+    }
+    90% {
+        stroke-dashoffset: -200;
+        stroke-dasharray: 200 200;
+    }
+    100% {
+        stroke-dashoffset: -200;
+        stroke-dasharray: 200 200;
+    }
+}
+
+@keyframes stroke-color {
+    0% {
+        stroke: #3498DB;
+    }
+    24% {
+        stroke: #643232;
+    }
+    25% {
+        stroke: #327864;
+    }
+    49% {
+        stroke: #327864;
+    }
+    50% {
+        stroke: #32326e;
+    }
+    74% {
+        stroke: #32326e;
+    }
+    75% {
+        stroke: #78325a;
+    }
+    99% {
+        stroke: #78325a;
+    }
+}

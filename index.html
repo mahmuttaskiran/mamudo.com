@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+    <meta name="keywords" content="Mahmut Taskiran, Mobile Application Developer, Mobil Uygulama Geliştiricisi, Geliştirici, Programmer">
+    <meta name="description" content="Mahmut Taskiran's personal site. Mahmut Taskiran's CV.">
+
+    <!-- iOS meta tags & icons -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="mamudo_com">
+    <link rel="apple-touch-icon" href="icons/Icon-192.png">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/png" href="favicon.png"/>
+    <link rel="stylesheet" href="loading.css">
+    <title>Mahmut Taskiran</title>
+    <link rel="manifest" href="manifest.json">
+</head>
+<body style="background-color: #303030">
+<div id="container">
+    <svg width="200" height="200" viewBox="0 0 100 100">
+        <polyline class="line-cornered stroke-still" points="0,0 100,0 100,100" stroke-width="10" fill="none"></polyline>
+        <polyline class="line-cornered stroke-still" points="0,0 0,100 100,100" stroke-width="10" fill="none"></polyline>
+        <polyline class="line-cornered stroke-animation" points="0,0 100,0 100,100" stroke-width="10" fill="none"></polyline>
+        <polyline class="line-cornered stroke-animation" points="0,0 0,100 100,100" stroke-width="10" fill="none"></polyline>
+    </svg>
+
+    <div id="textContainer">
+        <p id="textTheme">Made with Flutter<br/>I hope you have some time...</p>
+    </div>
+</div>
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function () {
+      navigator.serviceWorker.register('flutter_service_worker.js?v=148147037');
+    });
+  }
+</script>
+<script src="main.dart.js" type="application/javascript"></script>
+</body>
+</html>
